@@ -10,8 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowTitle("Asser");
-    connect(ui -> ExitButton, &QPushButton::clicked, this, &MainWindow::ExitButton_clicked);
-    connect(ui -> AuthorButton, &QPushButton::clicked, this, &MainWindow::AuthorButton_clicked);
+    connect(ui -> ExitButton, &QPushButton::clicked, this, &MainWindow::ExitButton_clicked); //СОЕДИНЕНИЕ кнопки ВЫХОД
+    connect(ui -> AuthorButton, &QPushButton::clicked, this, &MainWindow::AuthorButton_clicked); //Соединение кнопки АВТОРЫ
 }
 
 MainWindow::~MainWindow()
@@ -54,18 +54,18 @@ void MainWindow::AuthorButton_clicked() // о Рабах системы MS DOS
 
 void MainWindow::ExitButton_clicked() // Выход (Можно и в окно)
 {
-    QMessageBox msgBox(this);
-    msgBox.setWindowTitle("Выйти в окно");
-    msgBox.setText("Ты точно уверен в этом?");
-    QPushButton* yesButton = msgBox.addButton(QMessageBox::Yes);
-    QPushButton* noButton = msgBox.addButton(QMessageBox::No);
-    yesButton -> setText("Да, отчисляйте");
-    noButton -> setText("Нет, простите");
-    Authors *authorsWindow; //Ебучий костыль - надо исправить
-    msgBox.exec();
-    if (msgBox.clickedButton() == yesButton) {
-        this -> close();
-        authors.h -> close(); //Продолжение костыля - также исправить
+    QMessageBox msgBox(this); //прописываем создание Массажной коробки
+    msgBox.setWindowTitle("Выйти в окно"); // Для массажной коробки установим заголовок
+    msgBox.setText("Ты точно уверен в этом?"); //вывод текста в массажную коробку
+    QPushButton* yesButton = msgBox.addButton(QMessageBox::Yes); //задаем тама кнопку ДА
+    QPushButton* noButton = msgBox.addButton(QMessageBox::No); // аналогично задаем кнопку НЕТ
+    yesButton -> setText("Да, отчисляйте"); //ну тут текст для кнопок в Коробковом массаже (ДА)
+    noButton -> setText("Нет, простите"); // также и для НЕТ
+    Authors *authorsWindow; //Ебучий костыль - надо исправить (Рожденный чтобы быть убитым лол)
+    msgBox.exec(); //Че то типо запуска нашего Массажного Коробка
+    if (msgBox.clickedButton() == yesButton) { //проверка на то, нажата ли кнопка ДА в массажном боксе (обращение к классу msgBox свойству clickedButton() )
+        this -> close(); // Убиваем MEIN меню
+        authorsWindow -> close(); //Убиваем окно с авторами. Продолжение костыля - также исправить.
     }
 }
 

@@ -44,39 +44,45 @@ public:
         GoTestButton = new QPushButton(centralwidget);
         GoTestButton->setObjectName("GoTestButton");
         GoTestButton->setGeometry(QRect(320, 290, 301, 51));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("FreeMono")});
+        font.setPointSize(14);
+        font.setBold(true);
+        font.setItalic(false);
+        GoTestButton->setFont(font);
         GoTestButton->setStyleSheet(QString::fromUtf8("color: rgb(246, 245, 244);\n"
-"font: 800 italic 14pt \"Fira Sans\";\n"
-"background-color: rgb(36, 31, 49);"));
+"background-color: rgb(36, 31, 49);\n"
+"font: 700 14pt \"FreeMono\";"));
         GoStatButton = new QPushButton(centralwidget);
         GoStatButton->setObjectName("GoStatButton");
         GoStatButton->setGeometry(QRect(320, 370, 301, 51));
         GoStatButton->setStyleSheet(QString::fromUtf8("color: rgb(246, 245, 244);\n"
-"font: 800 italic 14pt \"Fira Sans\";\n"
-"background-color: rgb(36, 31, 49);"));
+"background-color: rgb(36, 31, 49);\n"
+"font: 700 14pt \"FreeMono\";"));
         GoDecoderButton = new QPushButton(centralwidget);
         GoDecoderButton->setObjectName("GoDecoderButton");
         GoDecoderButton->setGeometry(QRect(320, 450, 301, 51));
         GoDecoderButton->setStyleSheet(QString::fromUtf8("color: rgb(246, 245, 244);\n"
-"font: 800 italic 14pt \"Fira Sans\";\n"
-"background-color: rgb(36, 31, 49);"));
+"background-color: rgb(36, 31, 49);\n"
+"font: 700 14pt \"FreeMono\";"));
         GoManualsButton = new QPushButton(centralwidget);
         GoManualsButton->setObjectName("GoManualsButton");
         GoManualsButton->setGeometry(QRect(320, 530, 301, 51));
         GoManualsButton->setStyleSheet(QString::fromUtf8("color: rgb(246, 245, 244);\n"
-"font: 800 italic 14pt \"Fira Sans\";\n"
-"background-color: rgb(36, 31, 49);"));
+"background-color: rgb(36, 31, 49);\n"
+"font: 700 14pt \"FreeMono\";"));
         AuthorButton = new QPushButton(centralwidget);
         AuthorButton->setObjectName("AuthorButton");
         AuthorButton->setGeometry(QRect(320, 610, 301, 51));
         AuthorButton->setStyleSheet(QString::fromUtf8("color: rgb(246, 245, 244);\n"
-"font: 800 italic 14pt \"Fira Sans\";\n"
-"background-color: rgb(36, 31, 49);"));
+"background-color: rgb(36, 31, 49);\n"
+"font: 700 14pt \"FreeMono\";"));
         ExitButton = new QPushButton(centralwidget);
         ExitButton->setObjectName("ExitButton");
         ExitButton->setGeometry(QRect(320, 690, 301, 51));
         ExitButton->setStyleSheet(QString::fromUtf8("color: rgb(246, 245, 244);\n"
-"font: 800 italic 14pt \"Fira Sans\";\n"
-"background-color: rgb(36, 31, 49);"));
+"background-color: rgb(36, 31, 49);\n"
+"font: 700 14pt \"FreeMono\";"));
         SettingsButton = new QPushButton(centralwidget);
         SettingsButton->setObjectName("SettingsButton");
         SettingsButton->setGeometry(QRect(560, 0, 61, 61));

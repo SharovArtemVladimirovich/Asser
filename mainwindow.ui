@@ -26,10 +26,18 @@
       <height>51</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>FreeMono</family>
+      <pointsize>14</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(246, 245, 244);
-font: 800 italic 14pt &quot;Fira Sans&quot;;
-background-color: rgb(36, 31, 49);</string>
+background-color: rgb(36, 31, 49);
+font: 700 14pt &quot;FreeMono&quot;;</string>
     </property>
     <property name="text">
      <string>Разделы тестирования</string>
@@ -46,8 +54,8 @@ background-color: rgb(36, 31, 49);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(246, 245, 244);
-font: 800 italic 14pt &quot;Fira Sans&quot;;
-background-color: rgb(36, 31, 49);</string>
+background-color: rgb(36, 31, 49);
+font: 700 14pt &quot;FreeMono&quot;;</string>
     </property>
     <property name="text">
      <string>Статистика</string>
@@ -64,8 +72,8 @@ background-color: rgb(36, 31, 49);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(246, 245, 244);
-font: 800 italic 14pt &quot;Fira Sans&quot;;
-background-color: rgb(36, 31, 49);</string>
+background-color: rgb(36, 31, 49);
+font: 700 14pt &quot;FreeMono&quot;;</string>
     </property>
     <property name="text">
      <string>Дизассемблер</string>
@@ -82,8 +90,8 @@ background-color: rgb(36, 31, 49);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(246, 245, 244);
-font: 800 italic 14pt &quot;Fira Sans&quot;;
-background-color: rgb(36, 31, 49);</string>
+background-color: rgb(36, 31, 49);
+font: 700 14pt &quot;FreeMono&quot;;</string>
     </property>
     <property name="text">
      <string>Справочная информация</string>
@@ -100,8 +108,8 @@ background-color: rgb(36, 31, 49);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(246, 245, 244);
-font: 800 italic 14pt &quot;Fira Sans&quot;;
-background-color: rgb(36, 31, 49);</string>
+background-color: rgb(36, 31, 49);
+font: 700 14pt &quot;FreeMono&quot;;</string>
     </property>
     <property name="text">
      <string>Об авторах</string>
@@ -118,8 +126,8 @@ background-color: rgb(36, 31, 49);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(246, 245, 244);
-font: 800 italic 14pt &quot;Fira Sans&quot;;
-background-color: rgb(36, 31, 49);</string>
+background-color: rgb(36, 31, 49);
+font: 700 14pt &quot;FreeMono&quot;;</string>
     </property>
     <property name="text">
      <string>Выход</string>

@@ -14,6 +14,7 @@ class Authors : public QWidget
 public:
     explicit Authors(QWidget *parent = nullptr);
     ~Authors();
+
 private slots:
     void AuthorsBackMMButton_clicked();
 
