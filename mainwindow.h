@@ -23,8 +23,7 @@ private slots:
     void GoManualsButton_clicked();
     void AuthorButton_clicked();
     void ExitButton_clicked();
-
-    void on_SettingsButton_clicked();
+    void SettingsButton_clicked();
 
 private:
     Ui::MainWindow *ui;

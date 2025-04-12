@@ -71,7 +71,7 @@ void MainWindow::ExitButton_clicked() // Выход (Можно и в окно)
 }
 
 
-void MainWindow::on_SettingsButton_clicked() // Настройки
+void MainWindow::SettingsButton_clicked() // Настройки
 {
 
 }
