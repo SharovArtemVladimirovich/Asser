@@ -25,6 +25,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         authors.h authors.cpp authors.ui
         resources.qrc
+        images/Asser_PB_Выход.png images/Asser_PB_Дизассемблер.png images/Asser_PB_ОбАвторах.png
 
     )
 # Define target properties for Android with Qt 6 as:

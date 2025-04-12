@@ -71,13 +71,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 64,
+				"line" : 66,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 47,
+				"line" : 49,
 				"parent" : 0
 			},
 			{
@@ -281,7 +281,8 @@
 				0,
 				1,
 				2,
-				6
+				6,
+				15
 			]
 		}
 	],
@@ -366,7 +367,8 @@
 				0,
 				1,
 				2,
-				6
+				6,
+				15
 			]
 		},
 		{
@@ -375,8 +377,8 @@
 			[
 				3,
 				5,
-				8,
-				9
+				12,
+				13
 			]
 		},
 		{
@@ -388,17 +390,28 @@
 			]
 		},
 		{
+			"name" : "Resources",
+			"sourceIndexes" : 
+			[
+				8,
+				9,
+				10,
+				11
+			]
+		},
+		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				10
+				14
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				11
+				16,
+				17
 			]
 		}
 	],
@@ -450,6 +463,26 @@
 			"sourceGroupIndex" : 2
 		},
 		{
+			"backtrace" : 4,
+			"path" : "resources.qrc",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"path" : "images/Asser_PB_\u0412\u044b\u0445\u043e\u0434.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"path" : "images/Asser_PB_\u0414\u0438\u0437\u0430\u0441\u0441\u0435\u043c\u0431\u043b\u0435\u0440.png",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 4,
+			"path" : "images/Asser_PB_\u041e\u0431\u0410\u0432\u0442\u043e\u0440\u0430\u0445.png",
+			"sourceGroupIndex" : 3
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop-Debug/Asser_autogen/include/ui_mainwindow.h",
@@ -465,13 +498,26 @@
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop-Debug/Asser_autogen/timestamp",
-			"sourceGroupIndex" : 3
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/Asser_autogen/EWIEGA46WW/qrc_resources.cpp",
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop-Debug/Asser_autogen/timestamp.rule",
-			"sourceGroupIndex" : 4
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop-Debug/Asser_autogen/EWIEGA46WW/qrc_resources.cpp.rule",
+			"sourceGroupIndex" : 5
 		}
 	],
 	"type" : "EXECUTABLE"

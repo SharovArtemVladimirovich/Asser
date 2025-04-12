@@ -1,1 +1,36 @@
-<RCC/>
+<RCC>
+	<qresource prefix="imagesMainMenu">
+		<file>images/Asser_PB_Выход.png</file>
+		<file>images/Asser_PB_Выход_hover.png</file>
+		<file>images/Asser_PB_Выход_push.png</file>
+
+		<file>images/Asser_PB_ОбАвторах.png</file>
+		<file>images/Asser_PB_ОбАвторах_hover.png</file>
+		<file>images/Asser_PB_ОбАвторах_push.png</file>
+
+		<file>images/Asser_PB_Мануалы.png</file>
+		<file>images/Asser_PB_Мануалы_hover.png</file>
+		<file>images/Asser_PB_Мануалы_push.png</file>
+
+		<file>images/Asser_PB_Дизассемблер.png</file>
+		<file>images/Asser_PB_Дизассемблер_hover.png</file>
+		<file>images/Asser_PB_Дизассемблер_push.png</file>
+
+		<file>images/Asser_PB_Статистика.png</file>
+		<file>images/Asser_PB_Статистика_hover.png</file>
+		<file>images/Asser_PB_Статистика_push.png</file>
+
+		<file>images/Asser_PB_Тесты.png</file>
+		<file>images/Asser_PB_Тесты_hover.png</file>
+		<file>images/Asser_PB_Тесты_push.png</file>
+	</qresource>
+
+	<qresource prefix="imagesMainMenuLogo">
+		<file>images/Asser_Turbo_logo1.png</file>
+		<file>images/Asser_Turbo_logo2.png</file>
+		<file>images/Asser_Turbo_logo3.png</file>
+		<file>images/Asser_Turbo_logo4.png</file>
+	</qresource>
+
+</RCC>
+

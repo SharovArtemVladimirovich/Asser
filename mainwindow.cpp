@@ -3,6 +3,8 @@
 #include "authors.h"
 #include <QMessageBox>
 #include <QPushButton>
+#include <QPropertyAnimation>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -10,9 +12,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowTitle("Asser");
-    connect(ui -> ExitButton, &QPushButton::clicked, this, &MainWindow::ExitButton_clicked); //СОЕДИНЕНИЕ кнопки ВЫХОД
+    connect(ui -> ExitButton, &QPushButton::clicked, this, &MainWindow::ExitButton_clicked);//СОЕДИНЕНИЕ кнопки ВЫХОД
     connect(ui -> AuthorButton, &QPushButton::clicked, this, &MainWindow::AuthorButton_clicked); //Соединение кнопки АВТОРЫ
     this->setWindowFlags((this->windowFlags() & ~Qt::WindowMaximizeButtonHint) | Qt::WindowMinimizeButtonHint); // Отключение возможности менять формат окна
+
 }
 
 MainWindow::~MainWindow()

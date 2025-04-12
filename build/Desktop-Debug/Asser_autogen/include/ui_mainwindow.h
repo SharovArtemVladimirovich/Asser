@@ -10,7 +10,9 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -30,6 +32,7 @@ public:
     QPushButton *AuthorButton;
     QPushButton *ExitButton;
     QPushButton *SettingsButton;
+    QLabel *label;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -43,52 +46,126 @@ public:
         centralwidget->setObjectName("centralwidget");
         GoTestButton = new QPushButton(centralwidget);
         GoTestButton->setObjectName("GoTestButton");
-        GoTestButton->setGeometry(QRect(320, 290, 301, 51));
+        GoTestButton->setGeometry(QRect(300, 260, 321, 51));
         QFont font;
         font.setFamilies({QString::fromUtf8("FreeMono")});
         font.setPointSize(14);
         font.setBold(true);
         font.setItalic(false);
         GoTestButton->setFont(font);
-        GoTestButton->setStyleSheet(QString::fromUtf8("color: rgb(246, 245, 244);\n"
-"background-color: rgb(36, 31, 49);\n"
-"font: 700 14pt \"FreeMono\";"));
+        GoTestButton->setStyleSheet(QString::fromUtf8("#GoTestButton {\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\242\320\265\321\201\321\202\321\213.png);\n"
+"	margin-left: 20px;\n"
+"}\n"
+"#GoTestButton:hover {\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\242\320\265\321\201\321\202\321\213_hover.png);\n"
+"	margin-left: -20px;\n"
+"}\n"
+"#GoTestButton:pressed{\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\242\320\265\321\201\321\202\321\213_push.png);\n"
+"	margin-left: -20px;\n"
+"}"));
         GoStatButton = new QPushButton(centralwidget);
         GoStatButton->setObjectName("GoStatButton");
-        GoStatButton->setGeometry(QRect(320, 370, 301, 51));
-        GoStatButton->setStyleSheet(QString::fromUtf8("color: rgb(246, 245, 244);\n"
-"background-color: rgb(36, 31, 49);\n"
-"font: 700 14pt \"FreeMono\";"));
+        GoStatButton->setGeometry(QRect(300, 340, 321, 51));
+        GoStatButton->setStyleSheet(QString::fromUtf8("#GoStatButton {\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\241\321\202\320\260\321\202\320\270\321\201\321\202\320\270\320\272\320\260.png);\n"
+"	margin-left: 20px;\n"
+"}\n"
+"#GoStatButton:hover {\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\241\321\202\320\260\321\202\320\270\321\201\321\202\320\270\320\272\320\260_hover.png);\n"
+"	margin-left: -20px;\n"
+"}\n"
+"#GoStatButton:pressed{\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\241\321\202\320\260\321\202\320\270\321\201\321\202\320\270\320\272\320\260_push.png);\n"
+"	margin-left: -20px;\n"
+"}"));
         GoDecoderButton = new QPushButton(centralwidget);
         GoDecoderButton->setObjectName("GoDecoderButton");
-        GoDecoderButton->setGeometry(QRect(320, 450, 301, 51));
-        GoDecoderButton->setStyleSheet(QString::fromUtf8("color: rgb(246, 245, 244);\n"
-"background-color: rgb(36, 31, 49);\n"
-"font: 700 14pt \"FreeMono\";"));
+        GoDecoderButton->setGeometry(QRect(300, 420, 321, 51));
+        GoDecoderButton->setStyleSheet(QString::fromUtf8("#GoDecoderButton {\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\224\320\270\320\267\320\260\321\201\321\201\320\265\320\274\320\261\320\273\320\265\321\200.png);\n"
+"	margin-left: 20px;\n"
+"}\n"
+"#GoDecoderButton:hover {\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\224\320\270\320\267\320\260\321\201\321\201\320\265\320\274\320\261\320\273\320\265\321\200_hover.png);\n"
+"	margin-left: -20px;\n"
+"}\n"
+"#GoDecoderButton:pressed{\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\224\320\270\320\267\320\260\321\201\321\201\320\265\320\274\320\261\320\273\320\265\321\200_push.png);\n"
+"	margin-left: -20px;\n"
+"}"));
         GoManualsButton = new QPushButton(centralwidget);
         GoManualsButton->setObjectName("GoManualsButton");
-        GoManualsButton->setGeometry(QRect(320, 530, 301, 51));
-        GoManualsButton->setStyleSheet(QString::fromUtf8("color: rgb(246, 245, 244);\n"
-"background-color: rgb(36, 31, 49);\n"
-"font: 700 14pt \"FreeMono\";"));
+        GoManualsButton->setGeometry(QRect(300, 500, 321, 51));
+        GoManualsButton->setStyleSheet(QString::fromUtf8("#GoManualsButton {\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\234\320\260\320\275\321\203\320\260\320\273\321\213.png);\n"
+"	margin-left: 20px;\n"
+"}\n"
+"#GoManualsButton:hover {\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\234\320\260\320\275\321\203\320\260\320\273\321\213_hover.png);\n"
+"	margin-left: -20px;\n"
+"}\n"
+"#GoManualsButton:pressed{\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\234\320\260\320\275\321\203\320\260\320\273\321\213_push.png);\n"
+"	margin-left: -20px;\n"
+"}"));
         AuthorButton = new QPushButton(centralwidget);
         AuthorButton->setObjectName("AuthorButton");
-        AuthorButton->setGeometry(QRect(320, 610, 301, 51));
-        AuthorButton->setStyleSheet(QString::fromUtf8("color: rgb(246, 245, 244);\n"
-"background-color: rgb(36, 31, 49);\n"
-"font: 700 14pt \"FreeMono\";"));
+        AuthorButton->setGeometry(QRect(300, 580, 321, 51));
+        AuthorButton->setStyleSheet(QString::fromUtf8("#AuthorButton {\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\236\320\261\320\220\320\262\321\202\320\276\321\200\320\260\321\205.png);\n"
+"	margin-left: 20px;\n"
+"}\n"
+"#AuthorButton:hover {\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\236\320\261\320\220\320\262\321\202\320\276\321\200\320\260\321\205_hover.png);\n"
+"	margin-left: -20px;\n"
+"}\n"
+"#AuthorButton:pressed{\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\236\320\261\320\220\320\262\321\202\320\276\321\200\320\260\321\205_push.png);\n"
+"	margin-left: -20px;\n"
+"}"));
         ExitButton = new QPushButton(centralwidget);
         ExitButton->setObjectName("ExitButton");
-        ExitButton->setGeometry(QRect(320, 690, 301, 51));
-        ExitButton->setStyleSheet(QString::fromUtf8("color: rgb(246, 245, 244);\n"
-"background-color: rgb(36, 31, 49);\n"
-"font: 700 14pt \"FreeMono\";"));
+        ExitButton->setGeometry(QRect(300, 660, 321, 51));
+        ExitButton->setStyleSheet(QString::fromUtf8("#ExitButton {\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\222\321\213\321\205\320\276\320\264.png);\n"
+"	margin-left: 20px;\n"
+"}\n"
+"#ExitButton:hover {\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\222\321\213\321\205\320\276\320\264_hover.png);\n"
+"	margin-left: -20px;\n"
+"}\n"
+"#ExitButton:pressed{\n"
+"	image: url(:/imagesMainMenu/images/Asser_PB_\320\222\321\213\321\205\320\276\320\264_push.png);\n"
+"	margin-left: -20px;\n"
+"}"));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/images/Asser_PB_\320\222\321\213\321\205\320\276\320\264.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        ExitButton->setIcon(icon);
+        ExitButton->setIconSize(QSize(300, 50));
         SettingsButton = new QPushButton(centralwidget);
         SettingsButton->setObjectName("SettingsButton");
-        SettingsButton->setGeometry(QRect(560, 0, 61, 61));
-        SettingsButton->setStyleSheet(QString::fromUtf8("background-color: rgb(36, 31, 49);\n"
-"color: rgb(246, 245, 244);"));
+        SettingsButton->setGeometry(QRect(540, 20, 61, 61));
+        SettingsButton->setStyleSheet(QString::fromUtf8(""));
+        QIcon icon1(QIcon::fromTheme(QIcon::ThemeIcon::AudioVolumeHigh));
+        SettingsButton->setIcon(icon1);
+        SettingsButton->setIconSize(QSize(30, 30));
+        label = new QLabel(centralwidget);
+        label->setObjectName("label");
+        label->setGeometry(QRect(270, 10, 331, 151));
+        label->setStyleSheet(QString::fromUtf8("#label {\n"
+"image: url(:/imagesMainMenuLogo/images/Asser_Turbo_logo1.png);\n"
+"}"));
         MainWindow->setCentralWidget(centralwidget);
+        label->raise();
+        GoTestButton->raise();
+        GoStatButton->raise();
+        GoDecoderButton->raise();
+        GoManualsButton->raise();
+        AuthorButton->raise();
+        ExitButton->raise();
+        SettingsButton->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 650, 22));
@@ -105,13 +182,14 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        GoTestButton->setText(QCoreApplication::translate("MainWindow", "\320\240\320\260\320\267\320\264\320\265\320\273\321\213 \321\202\320\265\321\201\321\202\320\270\321\200\320\276\320\262\320\260\320\275\320\270\321\217", nullptr));
-        GoStatButton->setText(QCoreApplication::translate("MainWindow", "\320\241\321\202\320\260\321\202\320\270\321\201\321\202\320\270\320\272\320\260", nullptr));
-        GoDecoderButton->setText(QCoreApplication::translate("MainWindow", "\320\224\320\270\320\267\320\260\321\201\321\201\320\265\320\274\320\261\320\273\320\265\321\200", nullptr));
-        GoManualsButton->setText(QCoreApplication::translate("MainWindow", "\320\241\320\277\321\200\320\260\320\262\320\276\321\207\320\275\320\260\321\217 \320\270\320\275\321\204\320\276\321\200\320\274\320\260\321\206\320\270\321\217", nullptr));
-        AuthorButton->setText(QCoreApplication::translate("MainWindow", "\320\236\320\261 \320\260\320\262\321\202\320\276\321\200\320\260\321\205", nullptr));
-        ExitButton->setText(QCoreApplication::translate("MainWindow", "\320\222\321\213\321\205\320\276\320\264", nullptr));
-        SettingsButton->setText(QCoreApplication::translate("MainWindow", "\320\235\320\260\321\201\321\202\321\200", nullptr));
+        GoTestButton->setText(QString());
+        GoStatButton->setText(QString());
+        GoDecoderButton->setText(QString());
+        GoManualsButton->setText(QString());
+        AuthorButton->setText(QString());
+        ExitButton->setText(QString());
+        SettingsButton->setText(QString());
+        label->setText(QString());
     } // retranslateUi
 
 };
