@@ -9,6 +9,7 @@ Asser_autogen/timestamp: \
 	/home/user/Qt/Asser/main.cpp \
 	/home/user/Qt/Asser/mainwindow.cpp \
 	/home/user/Qt/Asser/mainwindow.h \
+	/home/user/Qt/Asser/resources.qrc \
 	/usr/include/alloca.h \
 	/usr/include/assert.h \
 	/usr/include/bits/atomic_wide_counter.h \

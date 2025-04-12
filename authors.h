@@ -16,7 +16,9 @@ public:
     ~Authors();
 
 private slots:
+
     void AuthorsBackMMButton_clicked();
+    void DonutButton_clicked();
 
 private:
     Ui::Authors *ui;

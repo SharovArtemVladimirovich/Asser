@@ -263,7 +263,8 @@
 		"/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake",
 		"/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake",
 		"/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
-		"/usr/share/cmake/Modules/GNUInstallDirs.cmake"
+		"/usr/share/cmake/Modules/GNUInstallDirs.cmake",
+		"/home/user/Qt/Asser/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/user/Qt/Asser",
 	"CROSS_CONFIG" : false,

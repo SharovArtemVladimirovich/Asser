@@ -8,6 +8,7 @@ Authors::Authors(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Asser.Authors"); //Ставим крутой заголовок окна
     connect(ui -> AuthorsBackMMButton, &QPushButton::clicked, this, &Authors::AuthorsBackMMButton_clicked); //конектим кнопку для AuthorsBackMMButton
+    connect(ui -> DonutButton, &QPushButton::clicked, this, &Authors::DonutButton_clicked); //конектим кнопку для ДОНАТОВ
 }
 
 Authors::~Authors()
@@ -19,6 +20,12 @@ void Authors::AuthorsBackMMButton_clicked() //просто возвращаем�
 {
 
     this -> close();
+
+}
+
+
+void Authors::DonutButton_clicked() //кнопаха для Попаха(доната)
+{
 
 }
 

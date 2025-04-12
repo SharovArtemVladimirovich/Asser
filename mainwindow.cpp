@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Asser");
     connect(ui -> ExitButton, &QPushButton::clicked, this, &MainWindow::ExitButton_clicked); //СОЕДИНЕНИЕ кнопки ВЫХОД
     connect(ui -> AuthorButton, &QPushButton::clicked, this, &MainWindow::AuthorButton_clicked); //Соединение кнопки АВТОРЫ
+    this->setWindowFlags((this->windowFlags() & ~Qt::WindowMaximizeButtonHint) | Qt::WindowMinimizeButtonHint); // Отключение возможности менять формат окна
 }
 
 MainWindow::~MainWindow()
