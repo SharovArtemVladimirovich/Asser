@@ -25,7 +25,10 @@ private slots:
     void ExitButton_clicked();
     void SettingsButton_clicked();
 
+    void goFullScreenButton_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
+    QRect m_previousGeometry;
 };
 #endif // MAINWINDOW_H

@@ -23,6 +23,18 @@
 		<file>images/Asser_PB_Тесты.png</file>
 		<file>images/Asser_PB_Тесты_hover.png</file>
 		<file>images/Asser_PB_Тесты_push.png</file>
+
+		<file>images/Asser_PB_goFullScreen.png</file>
+		<file>images/Asser_PB_goFullScreen_hover.png</file>
+		<file>images/Asser_PB_goFullScreen_push.png</file>
+
+		<file>images/Asser_PB_goFullScreen2.png</file>
+		<file>images/Asser_PB_goFullScreen2_hover.png</file>
+		<file>images/Asser_PB_goFullScreen2_push.png</file>
+
+		<file>images/Asser_PB_Settings.png</file>
+		<file>images/Asser_PB_Settings_hover.png</file>
+		<file>images/Asser_PB_Settings_push.png</file>
 	</qresource>
 
 	<qresource prefix="imagesMainMenuLogo">
