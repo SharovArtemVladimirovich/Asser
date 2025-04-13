@@ -71,11 +71,9 @@ void MainWindow::ExitButton_clicked() // Выход (Можно и в окно)
     QPushButton* noButton = msgBox.addButton(QMessageBox::No); // аналогично задаем кнопку НЕТ
     yesButton -> setText("Да, отчисляйте"); //ну тут текст для кнопок в Коробковом массаже (ДА)
     noButton -> setText("Нет, простите"); // также и для НЕТ
-    Authors *authorsWindow; //Ебучий костыль - надо исправить (Рожденный чтобы быть убитым лол)
     msgBox.exec(); //Че то типо запуска нашего Массажного Коробка
     if (msgBox.clickedButton() == yesButton) { //проверка на то, нажата ли кнопка ДА в массажном боксе (обращение к классу msgBox свойству clickedButton() )
-        this -> close(); // Убиваем MEIN меню
-        authorsWindow -> close(); //Убиваем окно с авторами. Продолжение костыля - также исправить.
+        QApplication::quit(); // Закрываем ВСЁ ПРИЛОЖЕНИЕ (Ебучий костыль исправлен)
     }
 }
 
