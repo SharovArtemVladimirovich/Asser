@@ -32,12 +32,6 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <property name="maximumSize">
-    <size>
-     <width>650</width>
-     <height>806</height>
-    </size>
-   </property>
    <property name="contextMenuPolicy">
     <enum>Qt::ContextMenuPolicy::NoContextMenu</enum>
    </property>
@@ -47,28 +41,52 @@
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <widget class="QPushButton" name="GoTestButton">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>280</y>
-      <width>321</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>FreeMono</family>
-      <pointsize>14</pointsize>
-      <italic>false</italic>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="tabletTracking">
-     <bool>true</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#GoTestButton {
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>600</width>
+        <height>850</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>650</width>
+        <height>850</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 0, 0);</string>
+      </property>
+      <widget class="QPushButton" name="GoTestButton">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>280</y>
+         <width>321</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>FreeMono</family>
+         <pointsize>14</pointsize>
+         <italic>false</italic>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="tabletTracking">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#GoTestButton {
 	image: url(:/imagesMainMenu/images/Asser_PB_Тесты.png);
 	margin-left: 20px;
 	border: none;
@@ -82,28 +100,28 @@
 	image: url(:/imagesMainMenu/images/Asser_PB_Тесты_push.png);
 	margin-left: -20px;
 }</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="checkable">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="GoStatButton">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>360</y>
-      <width>321</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="tabletTracking">
-     <bool>true</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#GoStatButton {
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="GoStatButton">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>370</y>
+         <width>321</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="tabletTracking">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#GoStatButton {
 	image: url(:/imagesMainMenu/images/Asser_PB_Статистика.png);
 	margin-left: 20px;
 	border: none;
@@ -117,25 +135,25 @@
 	image: url(:/imagesMainMenu/images/Asser_PB_Статистика_push.png);
 	margin-left: -20px;
 }</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="GoDecoderButton">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>440</y>
-      <width>321</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="tabletTracking">
-     <bool>true</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#GoDecoderButton {
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="GoDecoderButton">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>460</y>
+         <width>321</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="tabletTracking">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#GoDecoderButton {
 	image: url(:/imagesMainMenu/images/Asser_PB_Дизассемблер.png);
 	margin-left: 20px;
 	border: none;
@@ -149,25 +167,25 @@
 	image: url(:/imagesMainMenu/images/Asser_PB_Дизассемблер_push.png);
 	margin-left: -20px;
 }</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="GoManualsButton">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>520</y>
-      <width>321</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="tabletTracking">
-     <bool>true</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#GoManualsButton {
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="GoManualsButton">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>550</y>
+         <width>321</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="tabletTracking">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#GoManualsButton {
 	image: url(:/imagesMainMenu/images/Asser_PB_Мануалы.png);
 	margin-left: 20px;
 	border: none;
@@ -181,25 +199,25 @@
 	image: url(:/imagesMainMenu/images/Asser_PB_Мануалы_push.png);
 	margin-left: -20px;
 }</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="AuthorButton">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>600</y>
-      <width>321</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="tabletTracking">
-     <bool>true</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#AuthorButton {
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="AuthorButton">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>640</y>
+         <width>321</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="tabletTracking">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#AuthorButton {
 	image: url(:/imagesMainMenu/images/Asser_PB_ОбАвторах.png);
 	margin-left: 20px;
 	border: none;
@@ -213,25 +231,25 @@
 	image: url(:/imagesMainMenu/images/Asser_PB_ОбАвторах_push.png);
 	margin-left: -20px;
 }</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="ExitButton">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>680</y>
-      <width>321</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="tabletTracking">
-     <bool>true</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#ExitButton {
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="ExitButton">
+       <property name="geometry">
+        <rect>
+         <x>270</x>
+         <y>730</y>
+         <width>321</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="tabletTracking">
+        <bool>true</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#ExitButton {
 	image: url(:/imagesMainMenu/images/Asser_PB_Выход.png);
 	margin-left: 20px;
 	border: none;
@@ -245,90 +263,53 @@
 	image: url(:/imagesMainMenu/images/Asser_PB_Выход_push.png);
 	margin-left: -20px;
 }</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>:/images/Asser_PB_Выход.png</normaloff>:/images/Asser_PB_Выход.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>300</width>
-      <height>50</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="SettingsButton">
-    <property name="geometry">
-     <rect>
-      <x>560</x>
-      <y>20</y>
-      <width>41</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#SettingsButton{
-	image: url(:/imagesMainMenu/images/Asser_PB_Settings.png);
-	border: none;
-    outline: none;
-	margin-bottom: 10px;
-}
-
-#SettingsButton:hover{
-	image: url(:/imagesMainMenu/images/Asser_PB_Settings_hover.png);
-	margin-bottom: -10px;
-}
-
-#SettingsButton:pressed{	
-	image: url(:/imagesMainMenu/images/Asser_PB_Settings_push.png);
-	margin-bottom: -10px;
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>30</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>80</y>
-      <width>391</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#label {
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>:/images/Asser_PB_Выход.png</normaloff>:/images/Asser_PB_Выход.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>300</width>
+         <height>50</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>70</y>
+         <width>391</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#label {
 image: url(:/imagesMainMenuLogo/images/Asser_Turbo_logo1.png);
 }</string>
-    </property>
-    <property name="midLineWidth">
-     <number>2</number>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="goFullScreenButton">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>20</y>
-      <width>41</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#goFullScreenButton{
+       </property>
+       <property name="midLineWidth">
+        <number>2</number>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="goFullScreenButton">
+       <property name="geometry">
+        <rect>
+         <x>480</x>
+         <y>10</y>
+         <width>41</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#goFullScreenButton{
 	image: url(:/imagesMainMenu/images/Asser_PB_goFullScreen.png);
 	border: none;
     outline: none;
@@ -345,29 +326,60 @@ image: url(:/imagesMainMenuLogo/images/Asser_Turbo_logo1.png);
 	image: url(:/imagesMainMenu/images/Asser_PB_goFullScreen_push.png);
 	margin-bottom: -10px;
 }</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>30</width>
-      <height>30</height>
-     </size>
-    </property>
-    <property name="checkable">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <zorder>label</zorder>
-   <zorder>GoTestButton</zorder>
-   <zorder>GoStatButton</zorder>
-   <zorder>GoDecoderButton</zorder>
-   <zorder>GoManualsButton</zorder>
-   <zorder>AuthorButton</zorder>
-   <zorder>ExitButton</zorder>
-   <zorder>SettingsButton</zorder>
-   <zorder>goFullScreenButton</zorder>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="SettingsButton">
+       <property name="geometry">
+        <rect>
+         <x>540</x>
+         <y>10</y>
+         <width>41</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#SettingsButton{
+	image: url(:/imagesMainMenu/images/Asser_PB_Settings.png);
+	border: none;
+    outline: none;
+	margin-bottom: 10px;
+}
+
+#SettingsButton:hover{
+	image: url(:/imagesMainMenu/images/Asser_PB_Settings_hover.png);
+	margin-bottom: -10px;
+}
+
+#SettingsButton:pressed{	
+	image: url(:/imagesMainMenu/images/Asser_PB_Settings_push.png);
+	margin-bottom: -10px;
+}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>30</width>
+         <height>30</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
