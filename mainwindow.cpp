@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->setWindowFlags((this->windowFlags() & ~Qt::WindowMaximizeButtonHint) | Qt::WindowMinimizeButtonHint); // Отключение возможности менять формат окна
 
- }
+}
 
 MainWindow::~MainWindow()
 {
@@ -42,7 +42,7 @@ void MainWindow::GoStatButton_clicked() //Кнопка статистики
 }
 
 
-void MainWindow::GoDecoderButton_clicked() //Дизассемблер
+void MainWindow::GoDecoderButton_clicked() //Диз-ASS-емблер
 {
 
 }
@@ -58,23 +58,59 @@ void MainWindow::AuthorButton_clicked() // о Рабах системы MS DOS
 {
     Authors *authorsWindow = new Authors(); // Создаем окно, где родичь - МеинВиндоу
     authorsWindow -> setAttribute(Qt::WA_DeleteOnClose); //АвТоМаТиЧеСкОе УдАлЕнИе при закрытии
+    authorsWindow->setWindowModality(Qt::ApplicationModal);
     authorsWindow -> show(); //Показ окна с авторами
 }
 
 
 void MainWindow::ExitButton_clicked() // Выход (Можно и в окно)
 {
+    //Инициализация QMessageBox
     QMessageBox msgBox(this); //прописываем создание Массажной коробки
     msgBox.setWindowTitle("Выйти в окно"); // Для массажной коробки установим заголовок
     msgBox.setText("Ты точно уверен в этом?"); //вывод текста в массажную коробку
-    QPushButton* yesButton = msgBox.addButton(QMessageBox::Yes); //задаем тама кнопку ДА
-    QPushButton* noButton = msgBox.addButton(QMessageBox::No); // аналогично задаем кнопку НЕТ
-    yesButton -> setText("Да, отчисляйте"); //ну тут текст для кнопок в Коробковом массаже (ДА)
-    noButton -> setText("Нет, простите"); // также и для НЕТ
+
+    //Обьявляем кнопки (кнопахи, кноПОЧКИ, батоны, баттоны)
+    QPushButton *noButton = msgBox.addButton("Нет, простите", QMessageBox::ActionRole); // аналогично задаем кнопку НЕТ
+    QPushButton *yesButton = msgBox.addButton("Да, отчисляйте", QMessageBox::ActionRole); //задаем тама кнопку ДА
+    //Бонусом зафигачил текст сразу в обьявление кноПАХи
+
+    noButton -> setObjectName("noButton");
+    yesButton -> setObjectName("yesButton");
+
+    //устанавливаем Стиль для нашей Массажной коробки
+    msgBox.setStyleSheet("QMessageBox {"
+                         "      background-color: rgb(0,0,0);"
+                         "      color: white;"
+                         "      min-width: 530px;"
+                         "      min-height: 350px;"
+                         "}"
+
+                         "QPushButton {"
+                         "      min-width: 250px;"
+                         "      min-height: 50px;"
+                         "      padding: 5px;"
+                         "}"
+
+                         "QPushButton#noButton:hover{"
+                         "      background-color: lightgreen;"
+                         "      color: black;"
+                         "      font: 16pt;"
+                         "}"
+
+                         "QPushButton#yesButton:hover{"
+                         "      background-color: red;"
+                         "      font: 16pt;"
+                         "}"
+
+
+                         );
+
     msgBox.exec(); //Че то типо запуска нашего Массажного Коробка
     if (msgBox.clickedButton() == yesButton) { //проверка на то, нажата ли кнопка ДА в массажном боксе (обращение к классу msgBox свойству clickedButton() )
         QApplication::quit(); // Закрываем ВСЁ ПРИЛОЖЕНИЕ (Ебучий костыль исправлен)
     }
+
 }
 
 
@@ -87,7 +123,7 @@ void MainWindow::SettingsButton_clicked() // Настройки
 void MainWindow::goFullScreenButton_toggled(bool checked) { //Прописываем функцию для нашей тоггл кнопочки ПОЛНОГО (Ну тип жирного, ага) экрана
     if (checked) { // Ну IF он и в Африке ГОЛОДНЫЙ
         m_previousGeometry = this->geometry(); // Устанавливаем для переменной значения для геометрии (Чтоб когда обратно вернулись все не померло)
-        this->showFullScreen(); //Демонстрируем плебеям ЖИРНЫЙ (Ну тип жирного, ага)
+        this->showFullScreen(); //Демонстрируем плебеям ЖИРНЫЙ (Ну тип полный, ага) экран
 
         //БЛЯДСКОЕ ЗАЛИПАНИЕ КЛАВИШ СТЕРЛА ВСЕ МОИ КОММЕНТЫ ТВАРЬ (пишу по новой - все для роднулек)
 

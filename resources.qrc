@@ -44,5 +44,9 @@
 		<file>images/Asser_Turbo_logo4.png</file>
 	</qresource>
 
+	<qresource prefix="/sounds">
+		<file>sounds/viuuu.wav</file>
+	</qresource>
+
 </RCC>
 

@@ -37,7 +37,9 @@
 			"/usr/lib64/cmake/Qt6/QtPublicDependencyHelpers.cmake",
 			"/usr/lib64/cmake/Qt6Gui/Qt6GuiDependencies.cmake",
 			"/usr/lib64/cmake/Qt6Gui/Qt6GuiConfig.cmake",
-			"/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake"
+			"/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake",
+			"/usr/lib64/cmake/Qt6Multimedia/Qt6MultimediaTargets.cmake",
+			"/usr/lib64/cmake/Qt6Multimedia/Qt6MultimediaConfig.cmake"
 		],
 		"nodes" : 
 		[
@@ -47,7 +49,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 23,
+				"line" : 33,
 				"parent" : 0
 			},
 			{
@@ -71,13 +73,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 66,
+				"line" : 76,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 49,
+				"line" : 57,
 				"parent" : 0
 			},
 			{
@@ -203,6 +205,42 @@
 				"parent" : 27
 			},
 			{
+				"command" : 8,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"file" : 4,
+				"parent" : 30
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 200,
+				"parent" : 31
+			},
+			{
+				"file" : 13,
+				"parent" : 32
+			},
+			{
+				"command" : 7,
+				"file" : 13,
+				"line" : 65,
+				"parent" : 33
+			},
+			{
+				"file" : 12,
+				"parent" : 34
+			},
+			{
+				"command" : 6,
+				"file" : 12,
+				"line" : 70,
+				"parent" : 35
+			},
+			{
 				"command" : 5,
 				"file" : 0,
 				"line" : 647,
@@ -222,12 +260,20 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 30,
+					"backtrace" : 37,
 					"define" : "QT_CORE_LIB"
 				},
 				{
 					"backtrace" : 6,
 					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_MULTIMEDIA_LIB"
+				},
+				{
+					"backtrace" : 6,
+					"define" : "QT_NETWORK_LIB"
 				},
 				{
 					"backtrace" : 6,
@@ -241,17 +287,17 @@
 					"path" : "/home/user/Qt/Asser/build/Desktop-Debug/Asser_autogen/include"
 				},
 				{
-					"backtrace" : 30,
+					"backtrace" : 37,
 					"isSystem" : true,
 					"path" : "/usr/include/qt6/QtCore"
 				},
 				{
-					"backtrace" : 30,
+					"backtrace" : 37,
 					"isSystem" : true,
 					"path" : "/usr/include/qt6"
 				},
 				{
-					"backtrace" : 30,
+					"backtrace" : 37,
 					"isSystem" : true,
 					"path" : "/usr/lib64/qt6/mkspecs/linux-g++"
 				},
@@ -264,6 +310,16 @@
 					"backtrace" : 6,
 					"isSystem" : true,
 					"path" : "/usr/include/qt6/QtGui"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtMultimedia"
+				},
+				{
+					"backtrace" : 6,
+					"isSystem" : true,
+					"path" : "/usr/include/qt6/QtNetwork"
 				}
 			],
 			"language" : "CXX",
@@ -271,8 +327,8 @@
 			{
 				"backtraces" : 
 				[
-					30,
-					30
+					37,
+					37
 				],
 				"standard" : "17"
 			},
@@ -329,6 +385,11 @@
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 6,
+				"fragment" : "/usr/lib64/libQt6Multimedia.so.6.8.2",
+				"role" : "libraries"
+			},
+			{
 				"backtrace" : 13,
 				"fragment" : "/usr/lib64/libQt6Gui.so.6.8.2",
 				"role" : "libraries"
@@ -344,7 +405,12 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 30,
+				"backtrace" : 36,
+				"fragment" : "/usr/lib64/libQt6Network.so.6.8.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 37,
 				"fragment" : "/usr/lib64/libQt6Core.so.6.8.2",
 				"role" : "libraries"
 			}
