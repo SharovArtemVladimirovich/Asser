@@ -1,5 +1,6 @@
 <RCC>
 	<qresource prefix="imagesMainMenu">
+
 		<file>images/Asser_PB_Выход.png</file>
 		<file>images/Asser_PB_Выход_hover.png</file>
 		<file>images/Asser_PB_Выход_push.png</file>
@@ -35,9 +36,28 @@
 		<file>images/Asser_PB_Settings.png</file>
 		<file>images/Asser_PB_Settings_hover.png</file>
 		<file>images/Asser_PB_Settings_push.png</file>
+
+	</qresource>
+	
+	<qresource prefix="imagesDialog">
+
+		<file>images/Asser_L_quitText.png</file>
+		<file>gif/AsserQuitTxt.gif</file>
+		<file>gif/AsserQuitText.gif</file>
+
+		<file>images/Asser_PB_quitBNo.png</file>
+		<file>images/Asser_PB_quitBNo_hover.png</file>
+		<file>images/Asser_PB_quitBNo_push.png</file>
+
+		<file>images/Asser_PB_quitBYes.png</file>
+		<file>images/Asser_PB_quitBYes_hover.png</file>
+		<file>images/Asser_PB_quitBYes_push.png</file>
+	
 	</qresource>
 
+
 	<qresource prefix="imagesMainMenuLogo">
+
 		<file>images/Asser_Turbo_logo1.png</file>
 		<file>images/Asser_Turbo_logo2.png</file>
 		<file>images/Asser_Turbo_logo3.png</file>
