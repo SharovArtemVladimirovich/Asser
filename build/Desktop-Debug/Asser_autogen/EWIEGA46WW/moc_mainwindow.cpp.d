@@ -1,6 +1,7 @@
 /home/user/Qt/Asser/build/Desktop-Debug/Asser_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/user/Qt/Asser/mainwindow.h \
   /home/user/Qt/Asser/build/Desktop-Debug/Asser_autogen/moc_predefs.h \
   /home/user/Qt/Asser/authors.h \
+  /home/user/Qt/Asser/mainwindow.h \
   /usr/include/alloca.h \
   /usr/include/assert.h \
   /usr/include/bits/atomic_wide_counter.h \

@@ -37,6 +37,7 @@ public:
     QLabel *label;
     QPushButton *goFullScreenButton;
     QPushButton *SettingsButton;
+    QLabel *label_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -238,6 +239,20 @@ public:
 "	margin-bottom: -10px;\n"
 "}"));
         SettingsButton->setIconSize(QSize(30, 30));
+        label_2 = new QLabel(widget);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(-70, 210, 391, 501));
+        label_2->setStyleSheet(QString::fromUtf8(""));
+        label_2->raise();
+        GoTestButton->raise();
+        GoStatButton->raise();
+        GoDecoderButton->raise();
+        GoManualsButton->raise();
+        AuthorButton->raise();
+        ExitButton->raise();
+        label->raise();
+        goFullScreenButton->raise();
+        SettingsButton->raise();
 
         horizontalLayout->addWidget(widget);
 
@@ -267,6 +282,7 @@ public:
         label->setText(QString());
         goFullScreenButton->setText(QString());
         SettingsButton->setText(QString());
+        label_2->setText(QString());
     } // retranslateUi
 
 };

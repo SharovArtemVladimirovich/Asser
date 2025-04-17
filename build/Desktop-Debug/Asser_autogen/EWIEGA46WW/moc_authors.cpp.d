@@ -1,5 +1,7 @@
 /home/user/Qt/Asser/build/Desktop-Debug/Asser_autogen/EWIEGA46WW/moc_authors.cpp: /home/user/Qt/Asser/authors.h \
   /home/user/Qt/Asser/build/Desktop-Debug/Asser_autogen/moc_predefs.h \
+  /home/user/Qt/Asser/authors.h \
+  /home/user/Qt/Asser/mainwindow.h \
   /usr/include/alloca.h \
   /usr/include/assert.h \
   /usr/include/bits/atomic_wide_counter.h \
@@ -389,8 +391,11 @@
   /usr/include/qt6/QtGui/qtguiglobal.h \
   /usr/include/qt6/QtGui/qtransform.h \
   /usr/include/qt6/QtGui/qwindowdefs.h \
+  /usr/include/qt6/QtWidgets/QMainWindow \
   /usr/include/qt6/QtWidgets/QWidget \
+  /usr/include/qt6/QtWidgets/qmainwindow.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
+  /usr/include/qt6/QtWidgets/qtabwidget.h \
   /usr/include/qt6/QtWidgets/qtwidgets-config.h \
   /usr/include/qt6/QtWidgets/qtwidgetsexports.h \
   /usr/include/qt6/QtWidgets/qtwidgetsglobal.h \

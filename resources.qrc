@@ -38,6 +38,13 @@
 		<file>images/Asser_PB_Settings_push.png</file>
 
 	</qresource>
+
+	<qresource prefix="gif">
+		
+		<file>gif/alien-dance.gif</file>
+		<file>gif/alien-dance1.gif</file>
+
+	</qresource>
 	
 	<qresource prefix="imagesDialog">
 

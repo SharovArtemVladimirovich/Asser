@@ -12,7 +12,11 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QListView>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
+#include <QtWidgets/QScrollBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -20,59 +24,71 @@ QT_BEGIN_NAMESPACE
 class Ui_Authors
 {
 public:
-    QLabel *label;
-    QLabel *label_2;
-    QLabel *label_3;
-    QLabel *label_4;
+    QVBoxLayout *verticalLayout;
+    QWidget *widget;
+    QScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents_2;
     QPushButton *DonutButton;
     QPushButton *AuthorsBackMMButton;
+    QPushButton *pushButton;
+    QListView *listView;
+    QLabel *label;
+    QScrollBar *verticalScrollBar;
 
     void setupUi(QWidget *Authors)
     {
         if (Authors->objectName().isEmpty())
             Authors->setObjectName("Authors");
-        Authors->resize(550, 650);
+        Authors->resize(668, 868);
+        Authors->setMinimumSize(QSize(0, 0));
+        Authors->setMaximumSize(QSize(668, 868));
         Authors->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);\n"
 "color: rgb(246, 245, 244);"));
-        label = new QLabel(Authors);
-        label->setObjectName("label");
-        label->setGeometry(QRect(70, 50, 131, 51));
-        QFont font;
-        font.setPointSize(20);
-        font.setBold(true);
-        font.setItalic(true);
-        label->setFont(font);
-        label->setStyleSheet(QString::fromUtf8("color: rgb(38, 162, 105);"));
-        label_2 = new QLabel(Authors);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(70, 120, 321, 51));
-        QFont font1;
-        font1.setPointSize(16);
-        font1.setBold(true);
-        font1.setItalic(true);
-        label_2->setFont(font1);
-        label_2->setStyleSheet(QString::fromUtf8("color: rgb(38, 162, 105);"));
-        label_3 = new QLabel(Authors);
-        label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(70, 190, 321, 51));
-        label_3->setFont(font1);
-        label_3->setStyleSheet(QString::fromUtf8("color: rgb(38, 162, 105);"));
-        label_4 = new QLabel(Authors);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(70, 260, 371, 51));
-        label_4->setFont(font1);
-        label_4->setStyleSheet(QString::fromUtf8("color: rgb(38, 162, 105);"));
-        DonutButton = new QPushButton(Authors);
+        verticalLayout = new QVBoxLayout(Authors);
+        verticalLayout->setObjectName("verticalLayout");
+        widget = new QWidget(Authors);
+        widget->setObjectName("widget");
+        widget->setMinimumSize(QSize(0, 0));
+        widget->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
+        scrollArea = new QScrollArea(widget);
+        scrollArea->setObjectName("scrollArea");
+        scrollArea->setGeometry(QRect(40, 320, 531, 171));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents_2 = new QWidget();
+        scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 529, 169));
+        DonutButton = new QPushButton(scrollAreaWidgetContents_2);
         DonutButton->setObjectName("DonutButton");
-        DonutButton->setGeometry(QRect(60, 490, 201, 81));
-        DonutButton->setStyleSheet(QString::fromUtf8("color: rgb(224, 27, 36);"));
-        AuthorsBackMMButton = new QPushButton(Authors);
-        AuthorsBackMMButton->setObjectName("AuthorsBackMMButton");
-        AuthorsBackMMButton->setGeometry(QRect(280, 490, 201, 81));
-        AuthorsBackMMButton->setStyleSheet(QString::fromUtf8("color: rgb(224, 27, 36);\n"
-"border-color: rgb(224, 27, 36);\n"
-"border: 3px;\n"
+        DonutButton->setGeometry(QRect(50, 70, 187, 50));
+        DonutButton->setMinimumSize(QSize(0, 50));
+        DonutButton->setStyleSheet(QString::fromUtf8("color: rgb(224, 27, 36);\n"
+"background-color: rgb(255, 255, 255);\n"
 ""));
+        AuthorsBackMMButton = new QPushButton(scrollAreaWidgetContents_2);
+        AuthorsBackMMButton->setObjectName("AuthorsBackMMButton");
+        AuthorsBackMMButton->setGeometry(QRect(30, 230, 187, 50));
+        AuthorsBackMMButton->setMinimumSize(QSize(0, 50));
+        AuthorsBackMMButton->setStyleSheet(QString::fromUtf8("color: rgb(224, 27, 36);\n"
+"background-color: rgb(255, 255, 255);\n"
+""));
+        pushButton = new QPushButton(scrollAreaWidgetContents_2);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(280, 400, 241, 101));
+        listView = new QListView(scrollAreaWidgetContents_2);
+        listView->setObjectName("listView");
+        listView->setGeometry(QRect(70, 530, 256, 192));
+        label = new QLabel(scrollAreaWidgetContents_2);
+        label->setObjectName("label");
+        label->setGeometry(QRect(300, 100, 171, 17));
+        verticalScrollBar = new QScrollBar(scrollAreaWidgetContents_2);
+        verticalScrollBar->setObjectName("verticalScrollBar");
+        verticalScrollBar->setGeometry(QRect(500, 0, 31, 171));
+        verticalScrollBar->setStyleSheet(QString::fromUtf8("background-color: rgb(61, 56, 70);"));
+        verticalScrollBar->setOrientation(Qt::Orientation::Vertical);
+        scrollArea->setWidget(scrollAreaWidgetContents_2);
+
+        verticalLayout->addWidget(widget);
+
 
         retranslateUi(Authors);
 
@@ -82,13 +98,11 @@ public:
     void retranslateUi(QWidget *Authors)
     {
         Authors->setWindowTitle(QCoreApplication::translate("Authors", "Form", nullptr));
-        label->setText(QCoreApplication::translate("Authors", "\320\220\320\262\321\202\320\276\321\200\321\213:", nullptr));
-        label_2->setText(QCoreApplication::translate("Authors", "\320\241\321\203\320\265\321\202\320\270\320\275 \320\230\320\273\321\214\321\217 \320\224\320\274\320\270\321\202\321\200\320\270\320\265\320\262\320\270\321\207", nullptr));
-        label_3->setText(QCoreApplication::translate("Authors", "\320\250\320\260\321\200\320\276\320\262 \320\220\321\200\321\202\321\221\320\274 \320\222\320\273\320\260\320\264\320\270\320\274\320\270\321\200\320\276\320\262\320\270\321\207", nullptr));
-        label_4->setText(QCoreApplication::translate("Authors", "\320\221\321\203\321\202\320\265\320\275\320\272\320\276 \320\225\320\273\320\270\320\267\320\260\320\262\320\265\321\202\320\260 \320\220\320\275\320\264\321\200\320\265\320\265\320\262\320\275\320\260", nullptr));
         DonutButton->setText(QCoreApplication::translate("Authors", "\320\235\320\260 \320\273\320\265\321\207\320\265\320\275\320\270\320\265 \320\262\321\213\321\210\320\265\321\203\320\277\320\276\320\274\321\217\320\275\321\203\321\202\321\213\321\205", nullptr));
         AuthorsBackMMButton->setText(QCoreApplication::translate("Authors", "\320\222\321\213\321\205\320\276\320\264 \320\262 \320\263\320\273\320\260\320\262\320\275\320\276\320\265\n"
 "\320\274\320\265\320\275\321\216", nullptr));
+        pushButton->setText(QCoreApplication::translate("Authors", "PushButton", nullptr));
+        label->setText(QCoreApplication::translate("Authors", "\320\233\320\270\321\201\321\202\320\260\320\271 \320\275\320\270\320\266\320\265", nullptr));
     } // retranslateUi
 
 };

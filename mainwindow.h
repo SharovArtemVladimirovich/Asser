@@ -17,6 +17,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private:
+    Ui::MainWindow *ui;
+    QRect m_previousGeometry; // обьявление переменной для сохранения геометрии (ГЫГЫ)
+
+
 private slots:
     void GoTestButton_clicked(); // Метод для перехода к тестикам
     void GoStatButton_clicked(); // Метод Статистики
@@ -28,8 +33,7 @@ private slots:
 
     void goFullScreenButton_toggled(bool checked); //Метод для кнопки полного экрана
 
-private:
-    Ui::MainWindow *ui;
-    QRect m_previousGeometry; // обьявление переменной для сохранения геометрии (ГЫГЫ)
+
+
 };
 #endif // MAINWINDOW_H

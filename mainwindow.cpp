@@ -22,6 +22,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->setWindowFlags((this->windowFlags() & ~Qt::WindowMaximizeButtonHint) | Qt::WindowMinimizeButtonHint); // Отключение возможности менять формат окна
 
+
+    QMovie *movie2 = new QMovie(":/gif/gif/alien-dance1.gif"); // Обьявлем под все добро переменную и суем в нее GIF из ресурсов
+    ui -> label_2 -> setMovie(movie2); // Пихаем наш Виджет QMovie с муви в лейбл
+    movie2 -> start(); // Не забываем запустить
+
 }
 
 MainWindow::~MainWindow()
@@ -54,18 +59,37 @@ void MainWindow::GoManualsButton_clicked() //Покурить маны
 }
 
 
-void MainWindow::AuthorButton_clicked() // о Рабах системы MS DOS
+void MainWindow::AuthorButton_clicked()
 {
-    Authors *authorsWindow = new Authors(); // Создаем окно, где родичь - МеинВиндоу
-    authorsWindow -> setAttribute(Qt::WA_DeleteOnClose); //АвТоМаТиЧеСкОе УдАлЕнИе при закрытии
-    authorsWindow->setWindowModality(Qt::ApplicationModal); // Делаем окно модальным
-    authorsWindow -> show(); //Показ окна с авторами
-}
 
+    //ui->AuthorButton->setEnabled(false); //
+
+    if(this->isFullScreen()) {
+
+        // Создаем виджет авторов как часть главного окна
+        Authors *authorsWidget = new Authors(this);  // this указывает на предка (MainWindow)
+
+        // Настраиваем виджет
+        authorsWidget->setAttribute(Qt::WA_DeleteOnClose);
+
+        // Получаем текущий layout главного окна
+        QHBoxLayout *mainLayout = qobject_cast<QHBoxLayout*>(centralWidget()->layout());
+
+        // Добавляем виджет авторов в layout
+        mainLayout -> addWidget(authorsWidget);
+
+        authorsWidget->show();  // Автоматически адаптируется под размер layout
+
+    } else {
+        Authors *authorsWidget = new Authors();
+        authorsWidget->setAttribute(Qt::WA_DeleteOnClose);
+        authorsWidget->show();
+    }
+}
 
 void MainWindow::ExitButton_clicked() // Выход (Можно и в окно)
 {
-    class CustomDialog : public QDialog { // Обьявляем класс для диалогового окна (Замена --АСС-ажной коробке)
+    class CustomDialog : public QDialog { // Обьявляем класс для диалогового окна (Замена м-АСС-ажной коробке)
 
     public:
         CustomDialog(QWidget *parent = nullptr) : QDialog(parent) { // Последние настрйоки класса (Че тут к чему мне еще надо разобраться, но пока что да - так)

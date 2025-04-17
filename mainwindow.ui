@@ -380,6 +380,32 @@ image: url(:/imagesMainMenuLogo/images/Asser_Turbo_logo1.png);
         </size>
        </property>
       </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>-70</x>
+         <y>210</y>
+         <width>391</width>
+         <height>501</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>label_2</zorder>
+      <zorder>GoTestButton</zorder>
+      <zorder>GoStatButton</zorder>
+      <zorder>GoDecoderButton</zorder>
+      <zorder>GoManualsButton</zorder>
+      <zorder>AuthorButton</zorder>
+      <zorder>ExitButton</zorder>
+      <zorder>label</zorder>
+      <zorder>goFullScreenButton</zorder>
+      <zorder>SettingsButton</zorder>
      </widget>
     </item>
    </layout>

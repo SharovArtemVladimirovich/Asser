@@ -1,8 +1,9 @@
 #include "authors.h"
 #include "ui_authors.h"
 #include "mainwindow.h"
+#include "./ui_mainwindow.h"
 
-Authors::Authors(QWidget *parent) :
+Authors::Authors( QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Authors)
 {
@@ -19,7 +20,7 @@ Authors::~Authors()
 
 void Authors::AuthorsBackMMButton_clicked() //просто возвращаемся в главное меню (Сложный код)
 {
-    this -> close();
+        this -> close();
 }
 
 
