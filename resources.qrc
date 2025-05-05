@@ -1,0 +1,158 @@
+<RCC>
+	<qresource prefix="imagesMainMenu">
+
+		<file>images/Asser_background.png</file>
+
+		<file>images/Asser_PB_Выход.png</file>
+		<file>images/Asser_PB_Выход_hover.png</file>
+		<file>images/Asser_PB_Выход_push.png</file>
+
+		<file>images/Asser_PB_ОбАвторах.png</file>
+		<file>images/Asser_PB_ОбАвторах_hover.png</file>
+		<file>images/Asser_PB_ОбАвторах_push.png</file>
+
+		<file>images/Asser_PB_Мануалы.png</file>
+		<file>images/Asser_PB_Мануалы_hover.png</file>
+		<file>images/Asser_PB_Мануалы_push.png</file>
+
+		<file>images/Asser_PB_Дизассемблер.png</file>
+		<file>images/Asser_PB_Дизассемблер_hover.png</file>
+		<file>images/Asser_PB_Дизассемблер_push.png</file>
+
+		<file>images/Asser_PB_Статистика.png</file>
+		<file>images/Asser_PB_Статистика_hover.png</file>
+		<file>images/Asser_PB_Статистика_push.png</file>
+
+		<file>images/Asser_PB_Тесты.png</file>
+		<file>images/Asser_PB_Тесты_hover.png</file>
+		<file>images/Asser_PB_Тесты_push.png</file>
+
+		<file>images/Asser_PB_goFullScreen.png</file>
+		<file>images/Asser_PB_goFullScreen_hover.png</file>
+		<file>images/Asser_PB_goFullScreen_push.png</file>
+
+		<file>images/Asser_PB_goFullScreen2.png</file>
+		<file>images/Asser_PB_goFullScreen2_hover.png</file>
+		<file>images/Asser_PB_goFullScreen2_push.png</file>
+
+		<file>images/Asser_PB_Settings.png</file>
+		<file>images/Asser_PB_Settings_hover.png</file>
+		<file>images/Asser_PB_Settings_push.png</file>
+
+	</qresource>
+
+	<qresource prefix="imagesTests">
+
+		<file>images/Asser_Turbo_logo_Tests.png</file>
+
+		<file>images/Asser_TPB_1.png</file>
+		<file>images/Asser_TPB_1_hover.png</file>
+		<file>images/Asser_TPB_1_push.png</file>
+
+		<file>images/Asser_TPB_2.png</file>
+		<file>images/Asser_TPB_2_hover.png</file>
+		<file>images/Asser_TPB_2_push.png</file>
+
+		<file>images/Asser_TPB_2.png</file>
+		<file>images/Asser_TPB_2_hover.png</file>
+		<file>images/Asser_TPB_2_push.png</file>
+
+		<file>images/Asser_TPB_3.png</file>
+		<file>images/Asser_TPB_3_hover.png</file>
+		<file>images/Asser_TPB_3_push.png</file>
+
+		<file>images/Asser_TPB_4.png</file>
+		<file>images/Asser_TPB_4_hover.png</file>
+		<file>images/Asser_TPB_4_push.png</file>
+
+		<file>images/Asser_TPB_5.png</file>
+		<file>images/Asser_TPB_5_hover.png</file>
+		<file>images/Asser_TPB_5_push.png</file>
+
+		<file>images/Asser_TPB_7.png</file>
+		<file>images/Asser_TPB_7_hover.png</file>
+		<file>images/Asser_TPB_7_push.png</file>
+
+		<file>images/Asser_TPB_8.png</file>
+		<file>images/Asser_TPB_8_hover.png</file>
+		<file>images/Asser_TPB_8_push.png</file>
+
+		<file>images/Asser_TPB_BackToMenu.png</file>
+		<file>images/Asser_TPB_BackToMenu_hover.png</file>
+		<file>images/Asser_TPB_BackToMenu_push.png</file>
+
+	</qresource>
+
+	<qresource prefix="gif">
+		
+		<file>gif/alien-dance.gif</file>
+		<file>gif/alien-dance1.gif</file>
+
+		<file>gif/Asser_AL.gif</file>
+
+	</qresource>
+	
+	<qresource prefix="imagesDialog">
+
+		<file>images/Asser_L_quitText.png</file>
+		<file>gif/AsserQuitTxt.gif</file>
+		<file>gif/AsserQuitText.gif</file>
+
+		<file>images/Asser_PB_quitBNo.png</file>
+		<file>images/Asser_PB_quitBNo_hover.png</file>
+		<file>images/Asser_PB_quitBNo_push.png</file>
+
+		<file>images/Asser_PB_quitBYes.png</file>
+		<file>images/Asser_PB_quitBYes_hover.png</file>
+		<file>images/Asser_PB_quitBYes_push.png</file>
+	
+	</qresource>
+
+	<qresource prefix="imagesAuthors">
+
+		<file>images/Asser_AL.png</file>
+
+		<file>images/Asser_APB_BackToMenu.png</file>
+		<file>images/Asser_APB_BackToMenu_hover.png</file>
+		<file>images/Asser_APB_BackToMenu_push.png</file>
+
+		<file>images/Asser_APB_donut.png</file>
+		<file>images/Asser_APB_donut_hover.png</file>
+		<file>images/Asser_APB_donut_push.png</file>
+	
+	</qresource>
+
+
+	<qresource prefix="imagesMainMenuLogo">
+
+		<file>images/Asser_Turbo_logo1.png</file>
+		<file>images/Asser_Turbo_logo2.png</file>
+		<file>images/Asser_Turbo_logo3.png</file>
+		<file>images/Asser_Turbo_logo4.png</file>
+	</qresource>
+
+	<qresource prefix="imagesManuals">
+
+		<file>images/Asser_ML.png</file>
+		<file>images/Asser_ML_Notification.png</file>
+
+		<file>images/Asser_MPB_AssBook.png</file>
+		<file>images/Asser_MPB_AssBook_hover.png</file>
+		<file>images/Asser_MPB_AssBook_push.png</file>
+
+		<file>images/Asser_MPB_Shpora.png</file>
+		<file>images/Asser_MPB_Shpora_hover.png</file>
+		<file>images/Asser_MPB_Shpora_push.png</file>
+
+		<file>images/Asser_MPB_IntelDocs.png</file>
+		<file>images/Asser_MPB_IntelDocs_hover.png</file>
+		<file>images/Asser_MPB_IntelDocs_push.png</file>
+	
+	</qresource>
+
+	<qresource prefix="/docs">
+           <file>docs/assembly_cheatsheet.pdf</file>
+	</qresource>
+
+</RCC>
+
