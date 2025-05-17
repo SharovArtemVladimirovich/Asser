@@ -5,6 +5,7 @@
   /home/user/Qt/Asser/mainscreen.h \
   /home/user/Qt/Asser/manuals.h \
   /home/user/Qt/Asser/tests.h \
+  /home/user/Qt/Asser/testtype.h \
   /usr/include/alloca.h \
   /usr/include/assert.h \
   /usr/include/bits/atomic_wide_counter.h \
@@ -285,6 +286,7 @@
   /usr/include/qt6/QtCore/QPropertyAnimation \
   /usr/include/qt6/QtCore/QTimer \
   /usr/include/qt6/QtCore/QUrl \
+  /usr/include/qt6/QtCore/QVector \
   /usr/include/qt6/QtCore/q20functional.h \
   /usr/include/qt6/QtCore/q20iterator.h \
   /usr/include/qt6/QtCore/q20memory.h \
@@ -419,6 +421,7 @@
   /usr/include/qt6/QtCore/qvariant.h \
   /usr/include/qt6/QtCore/qvariantanimation.h \
   /usr/include/qt6/QtCore/qvarlengtharray.h \
+  /usr/include/qt6/QtCore/qvector.h \
   /usr/include/qt6/QtCore/qversiontagging.h \
   /usr/include/qt6/QtCore/qxptype_traits.h \
   /usr/include/qt6/QtCore/qyieldcpu.h \

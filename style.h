@@ -274,24 +274,24 @@ namespace TestsST {
         }
 
 
-        QPushButton#goTestSixthButton {
+        QPushButton#goTestSeventhButton {
             image: url(:/imagesTests/images/Asser_TPB_7.png);
         }
-        QPushButton#goTestSixthButton:hover {
+        QPushButton#goTestSeventhButton:hover {
             image: url(:/imagesTests/images/Asser_TPB_7_hover.png);
         }
-        QPushButton#goTestSixthButton:pressed{
+        QPushButton#goTestSeventhButton:pressed{
             image: url(:/imagesTests/images/Asser_TPB_7_push.png);
         }
 
 
-        QPushButton#goTestSeventhButton {
+        QPushButton#goTestEighthButton {
             image: url(:/imagesTests/images/Asser_TPB_8.png);
         }
-        QPushButton#goTestSeventhButton:hover {
+        QPushButton#goTestEighthButton:hover {
             image: url(:/imagesTests/images/Asser_TPB_8_hover.png);
         }
-        QPushButton#goTestSeventhButton:pressed{
+        QPushButton#goTestEighthButton:pressed{
             image: url(:/imagesTests/images/Asser_TPB_8_push.png);
         }
 
@@ -417,4 +417,15 @@ namespace ManualsST {
         }
     )";
 }
+namespace TestsDialogST {
+    const QString StyleTD = R"(
+
+)";
+    const QString Opisanie = R"(
+    Добро пожаловать на бойню!
+Здесь нет мамки с папкой, нет друзей и товарищей.
+Только ты и ассемблер - больше ничего!
+)";
+}
+
 #endif // STYLE_H

@@ -1,0 +1,32 @@
+[
+    {
+        "type": "conversion_table",
+        "title": "Заполните таблицу",
+        "columns": ["2cc", "8cc", "16cc", "10cc"],
+        "rows": [
+            {
+                "2cc": { "value": "", "correct": "1010" },
+                "8cc": { "value": "", "correct": "12" },
+                "16cc": { "value": "123", "correct": "123" },
+                "10cc": { "value": "", "correct": "291" }
+            },
+            {
+                "2cc": { "value": "0010", "correct": "0010" },
+                "8cc": { "value": "", "correct": "2" },
+                "16cc": { "value": "", "correct": "2" },
+                "10cc": { "value": "", "correct": "2" }
+            },
+            {
+                "2cc": { "value": "", "correct": "1010" },
+                "8cc": { "value": "12", "correct": "12" },
+                "16cc": { "value": "", "correct": "A" },
+                "10cc": { "value": "", "correct": "10" }
+            }
+        ]
+    },
+    {
+        "type": "input",
+        "question": "Переведите 1001 0110 в 16ричную систему счисления:",
+        "correct_answer": "96"
+    }
+]

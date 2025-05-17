@@ -25,8 +25,8 @@ public:
     QWidget *widgetTests;
     QLabel *label;
     QPushButton *MainBackButton;
+    QPushButton *goTestEighthButton;
     QPushButton *goTestSeventhButton;
-    QPushButton *goTestSixthButton;
     QPushButton *goTestFifthButton;
     QPushButton *goTestFourthButton;
     QPushButton *goTestThirdButton;
@@ -54,12 +54,12 @@ public:
         MainBackButton = new QPushButton(widgetTests);
         MainBackButton->setObjectName("MainBackButton");
         MainBackButton->setGeometry(QRect(40, 740, 550, 50));
+        goTestEighthButton = new QPushButton(widgetTests);
+        goTestEighthButton->setObjectName("goTestEighthButton");
+        goTestEighthButton->setGeometry(QRect(40, 650, 550, 50));
         goTestSeventhButton = new QPushButton(widgetTests);
         goTestSeventhButton->setObjectName("goTestSeventhButton");
-        goTestSeventhButton->setGeometry(QRect(40, 650, 550, 50));
-        goTestSixthButton = new QPushButton(widgetTests);
-        goTestSixthButton->setObjectName("goTestSixthButton");
-        goTestSixthButton->setGeometry(QRect(40, 560, 550, 50));
+        goTestSeventhButton->setGeometry(QRect(40, 560, 550, 50));
         goTestFifthButton = new QPushButton(widgetTests);
         goTestFifthButton->setObjectName("goTestFifthButton");
         goTestFifthButton->setGeometry(QRect(40, 470, 550, 50));
@@ -90,8 +90,8 @@ public:
         tests->setWindowTitle(QCoreApplication::translate("tests", "Form", nullptr));
         label->setText(QString());
         MainBackButton->setText(QString());
+        goTestEighthButton->setText(QString());
         goTestSeventhButton->setText(QString());
-        goTestSixthButton->setText(QString());
         goTestFifthButton->setText(QString());
         goTestFourthButton->setText(QString());
         goTestThirdButton->setText(QString());

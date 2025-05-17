@@ -1,6 +1,9 @@
 #include "mainwindow.h"
 #include "screenspace.h"
 #include "style.h"
+#include "testtemplatedialog.h"
+
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -41,6 +44,12 @@ void MainWindow::setupScreen()
         stck -> setCurrentIndex(Screen::MAIN); // а именно подключаем индекс из screenСПАЙС
     });
 
+    connect(testsScreen, &tests::testRequested, [this](TestType type, const QString& name, const QString& variant) {
+        // Здесь можно создать экран теста и передать параметры
+    });
+
+    connect(testsScreen, &tests::testRequested, this, &MainWindow::handleTestRequest);
+
 //---Скрин авторов--------------------------------------
 
     authors *authorsScreen = new authors(this);
@@ -79,10 +88,10 @@ void MainWindow::setupScreen()
     fullscreenBtn -> setCheckable(true); // Делаем ее ЧИКАБЕЛЬНОЙ
     fullscreenBtn -> setFixedSize(50, 70); // Задаем размеры кнопахи
     fullscreenBtn -> move(30, 30); // Позиция в левом верхнем углу
-    fullscreenBtn->setParent(this); // Делаем кнопаху дочерней для главного окна
-    fullscreenBtn->raise(); // Поднимаем поверх всех виджетов
+    fullscreenBtn -> setParent(this); // Делаем кнопаху дочерней для главного окна
+    fullscreenBtn -> raise(); // Поднимаем поверх всех виджетов
 
-    fullscreenBtn->setObjectName("fullscreenBtn");  // Устанавливаем имя ДО применения стилей
+    fullscreenBtn -> setObjectName("fullscreenBtn");  // Устанавливаем имя ДО применения стилей
     fullscreenBtn -> setStyleSheet(GlobalST::FSButton);
 
     connect(fullscreenBtn, &QPushButton::clicked,  // Правильный сигнал
@@ -102,7 +111,6 @@ void MainWindow::switchWithAnim(int index){
     });
 
     anim -> start(QPropertyAnimation::DeleteWhenStopped);
-
 }
 
 
@@ -143,10 +151,12 @@ void MainWindow::setupNotificationSystem() {
             this, &MainWindow::handleNotification);
 }
 
+
 void MainWindow::handleNotification(const QString& message) {
-    notificationLabel->setStyleSheet(message);
+    notificationLabel -> setStyleSheet(message);
     showNotification();
 }
+
 
 void MainWindow::showNotification() {
 
@@ -156,35 +166,56 @@ void MainWindow::showNotification() {
     notificationLabel -> move(30, 100);
     }
 
-    notificationLabel->show();
-    notificationLabel->raise();
+    notificationLabel -> show();
+    notificationLabel -> raise();
 
-    notificationTimer->start(5000); // Скрыть через 5 сек
+    notificationTimer -> start(5000); // Скрыть через 5 сек
 }
+
 
 void MainWindow::hideNotification() {
-    notificationLabel->hide();
+    notificationLabel -> hide();
 }
+
+
+void MainWindow::handleTestRequest(TestType type, const QString& name, const QString& variant) {
+    TestTemplateDialog *testDialog = new TestTemplateDialog(type, variant, name, this);
+    testDialog->setAttribute(Qt::WA_DeleteOnClose); // Автоматическое удаление
+
+    // Подключение сигнала к слоту
+    connect(testDialog, &TestTemplateDialog::testFinished, this, [this]() {
+        stck->setCurrentIndex(Screen::MAIN); // Возврат на главный экран
+        qDebug() << "Текущий индекс:" << stck->currentIndex(); // Отладка
+    });
+
+    testDialog->setWindowState(Qt::WindowFullScreen);
+    testDialog->exec();
+}
+
 
 void MainWindow::goMain_clicked()
 {
     switchWithAnim(Screen::MAIN);
 }
 
+
 void MainWindow::goTests_clicked()
 {
     switchWithAnim(Screen::TESTS);
 }
+
 
 void MainWindow::goAuthors_clicked()
 {
     switchWithAnim(Screen::AUTHORS);
 }
 
+
 void MainWindow::goDonut_clicked()
 {
     switchWithAnim(Screen::DONUT);
 }
+
 
 void MainWindow::goManuals_clicked()
 {

@@ -303,8 +303,26 @@
 			"EWIEGA46WW/moc_screenspace.cpp",
 			null
 		],
+		[
+			"/home/user/Qt/Asser/starttestdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_starttestdialog.cpp",
+			null
+		],
 		[ "/home/user/Qt/Asser/style.h", "MU", "EWIEGA46WW/moc_style.cpp", null ],
-		[ "/home/user/Qt/Asser/tests.h", "MU", "EWIEGA46WW/moc_tests.cpp", null ]
+		[ "/home/user/Qt/Asser/tests.h", "MU", "EWIEGA46WW/moc_tests.cpp", null ],
+		[
+			"/home/user/Qt/Asser/testtemplatedialog.h",
+			"MU",
+			"EWIEGA46WW/moc_testtemplatedialog.cpp",
+			null
+		],
+		[
+			"/home/user/Qt/Asser/testtype.h",
+			"MU",
+			"EWIEGA46WW/moc_testtype.cpp",
+			null
+		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/user/Qt/Asser/build/Desktop-Debug/Asser_autogen/include",
@@ -370,7 +388,9 @@
 		[ "/home/user/Qt/Asser/mainscreen.cpp", "MU", null ],
 		[ "/home/user/Qt/Asser/mainwindow.cpp", "MU", null ],
 		[ "/home/user/Qt/Asser/manuals.cpp", "MU", null ],
-		[ "/home/user/Qt/Asser/tests.cpp", "MU", null ]
+		[ "/home/user/Qt/Asser/starttestdialog.cpp", "MU", null ],
+		[ "/home/user/Qt/Asser/tests.cpp", "MU", null ],
+		[ "/home/user/Qt/Asser/testtemplatedialog.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

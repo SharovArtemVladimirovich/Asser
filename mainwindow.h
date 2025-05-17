@@ -31,6 +31,7 @@ private slots:
     void handleNotification(const QString& message);
     void hideNotification();
     void showNotification();
+    void handleTestRequest(TestType type, const QString& name, const QString& variant);
 
 private:
 
