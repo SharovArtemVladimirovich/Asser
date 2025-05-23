@@ -302,6 +302,8 @@ Asser_autogen/timestamp: \
 	/usr/include/locale.h \
 	/usr/include/pthread.h \
 	/usr/include/qt6/QtCore/QFile \
+	/usr/include/qt6/QtCore/QJsonArray \
+	/usr/include/qt6/QtCore/QJsonObject \
 	/usr/include/qt6/QtCore/QPropertyAnimation \
 	/usr/include/qt6/QtCore/QTimer \
 	/usr/include/qt6/QtCore/QUrl \
@@ -329,6 +331,8 @@ Asser_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qbytearraylist.h \
 	/usr/include/qt6/QtCore/qbytearrayview.h \
 	/usr/include/qt6/QtCore/qcalendar.h \
+	/usr/include/qt6/QtCore/qcborcommon.h \
+	/usr/include/qt6/QtCore/qcborvalue.h \
 	/usr/include/qt6/QtCore/qchar.h \
 	/usr/include/qt6/QtCore/qcompare.h \
 	/usr/include/qt6/QtCore/qcompare_impl.h \
@@ -364,8 +368,12 @@ Asser_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qhashfunctions.h \
 	/usr/include/qt6/QtCore/qiodevice.h \
 	/usr/include/qt6/QtCore/qiodevicebase.h \
+	/usr/include/qt6/QtCore/qitemselectionmodel.h \
 	/usr/include/qt6/QtCore/qiterable.h \
 	/usr/include/qt6/QtCore/qiterator.h \
+	/usr/include/qt6/QtCore/qjsonarray.h \
+	/usr/include/qt6/QtCore/qjsonobject.h \
+	/usr/include/qt6/QtCore/qjsonvalue.h \
 	/usr/include/qt6/QtCore/qlatin1stringview.h \
 	/usr/include/qt6/QtCore/qline.h \
 	/usr/include/qt6/QtCore/qlist.h \
@@ -439,6 +447,7 @@ Asser_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qtypes.h \
 	/usr/include/qt6/QtCore/qurl.h \
 	/usr/include/qt6/QtCore/qutf8stringview.h \
+	/usr/include/qt6/QtCore/quuid.h \
 	/usr/include/qt6/QtCore/qvariant.h \
 	/usr/include/qt6/QtCore/qvariantanimation.h \
 	/usr/include/qt6/QtCore/qvarlengtharray.h \
@@ -482,16 +491,21 @@ Asser_autogen/timestamp: \
 	/usr/include/qt6/QtWidgets/QComboBox \
 	/usr/include/qt6/QtWidgets/QDialog \
 	/usr/include/qt6/QtWidgets/QFileDialog \
+	/usr/include/qt6/QtWidgets/QGridLayout \
 	/usr/include/qt6/QtWidgets/QLabel \
 	/usr/include/qt6/QtWidgets/QLineEdit \
 	/usr/include/qt6/QtWidgets/QMainWindow \
 	/usr/include/qt6/QtWidgets/QMessageBox \
 	/usr/include/qt6/QtWidgets/QPushButton \
+	/usr/include/qt6/QtWidgets/QScrollArea \
 	/usr/include/qt6/QtWidgets/QStackedWidget \
+	/usr/include/qt6/QtWidgets/QTableWidget \
 	/usr/include/qt6/QtWidgets/QVBoxLayout \
 	/usr/include/qt6/QtWidgets/QWidget \
 	/usr/include/qt6/QtWidgets/qabstractbutton.h \
 	/usr/include/qt6/QtWidgets/qabstractitemdelegate.h \
+	/usr/include/qt6/QtWidgets/qabstractitemview.h \
+	/usr/include/qt6/QtWidgets/qabstractscrollarea.h \
 	/usr/include/qt6/QtWidgets/qabstractslider.h \
 	/usr/include/qt6/QtWidgets/qabstractspinbox.h \
 	/usr/include/qt6/QtWidgets/qboxlayout.h \
@@ -509,12 +523,15 @@ Asser_autogen/timestamp: \
 	/usr/include/qt6/QtWidgets/qmessagebox.h \
 	/usr/include/qt6/QtWidgets/qpushbutton.h \
 	/usr/include/qt6/QtWidgets/qrubberband.h \
+	/usr/include/qt6/QtWidgets/qscrollarea.h \
 	/usr/include/qt6/QtWidgets/qsizepolicy.h \
 	/usr/include/qt6/QtWidgets/qslider.h \
 	/usr/include/qt6/QtWidgets/qstackedwidget.h \
 	/usr/include/qt6/QtWidgets/qstyle.h \
 	/usr/include/qt6/QtWidgets/qstyleoption.h \
 	/usr/include/qt6/QtWidgets/qtabbar.h \
+	/usr/include/qt6/QtWidgets/qtableview.h \
+	/usr/include/qt6/QtWidgets/qtablewidget.h \
 	/usr/include/qt6/QtWidgets/qtabwidget.h \
 	/usr/include/qt6/QtWidgets/qtwidgets-config.h \
 	/usr/include/qt6/QtWidgets/qtwidgetsexports.h \

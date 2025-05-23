@@ -1,0 +1,121 @@
+[
+    {
+      "type": "table",
+      "question": "1. Заполните таблицу.",
+      "columns": ["b", "q", "d", "h"],
+      "rows": 7,
+      "answers": [
+        {"row": 0, "col": 0, "correct": "1010010100011"},
+        {"row": 0, "col": 1, "correct": "12243"},
+        {"row": 0, "col": 2, "value" : "5283", "fixed": true},
+        {"row": 0, "col": 3, "correct": "1443"},
+
+        {"row": 1, "col": 0, "correct": "1111101"},
+        {"row": 1, "col": 1, "value" : "175", "fixed": true},
+        {"row": 1, "col": 2, "correct": "125"},
+        {"row": 1, "col": 3, "correct": "7D"},
+
+        {"row": 2, "col": 0, "value" : "101101111", "fixed": true},
+        {"row": 2, "col": 1, "correct": "557"},
+        {"row": 2, "col": 2, "correct": "367"},
+        {"row": 2, "col": 3, "correct": "16F"},
+
+        {"row": 3, "col": 0, "correct": "0.00110101"},
+        {"row": 3, "col": 1, "correct": "0.132"},
+        {"row": 3, "col": 2, "correct": "0.17578125"},
+        {"row": 3, "col": 3, "value" : "0.2D", "fixed": true},
+
+        {"row": 4, "col": 0, "correct": "10001101010001.1"},
+        {"row": 4, "col": 1, "correct": "21551.4"},
+        {"row": 4, "col": 2, "value" : "9065.5", "fixed": true},
+        {"row": 4, "col": 3, "correct": "2369.8"},
+
+        {"row": 5, "col": 0,"value": "1110.11101", "fixed": true},
+        {"row": 5, "col": 1, "correct": "16.72"},
+        {"row": 5, "col": 2, "correct": "14.90625"},
+        {"row": 5, "col": 3, "correct": "E.E8"},
+
+        {"row": 6, "col": 0, "correct": "1011101111.0000101"},
+        {"row": 6, "col": 1, "correct": "1357.024"},
+        {"row": 6, "col": 2, "correct": "751.0390625"},
+        {"row": 6, "col": 3, "value": "2EF.0A", "fixed": true}
+      ]
+    },
+  {
+    "type": "input",
+    "question": "2. Запишите следующее шестнадцатеричное число в BCH-формате:\n6F3B.7E116 =",
+    "correct_answer": "0110 1111 0011 1011.0111 1110 0001"
+  },
+  {
+    "type": "input",
+    "question": "3. Запишите следующее BCH-число в шестнадцатеричном виде:\n1101 0011 1001 0110 0001 11002 =",
+    "correct_answer": "D3961C"
+  },
+  {
+    "type": "input",
+    "question": "4. Преобразуйте следующее двоичное число в отрицательное в обратном коде:\n0011 11112 =",
+    "correct_answer": "1100 0000"
+  },
+  {
+    "type": "input",
+    "question": "5. Преобразуйте следующее двоичное число в отрицательное в дополнительном коде:\n0100 10112 =",
+    "correct_answer": "1011 0101"
+  },
+  {
+    "type": "input",
+    "question": "6. Преобразуйте десятичное число в 8-разрядное отрицательное двоичное число в обратном коде:\n-11010 =",
+    "correct_answer": "10010001"
+  },
+  {
+    "type": "input",
+    "question": "7. Преобразуйте десятичное число в 16-разрядное отрицательное двоичное число в дополнительном коде:\n-149710 =",
+    "correct_answer": "1111101000100111"
+  },
+  {
+    "type": "input",
+    "question": "8. Преобразуйте следующее двоичное число в знаковое десятичное (обратный код):\n1110 10112 =",
+    "correct_answer": "-20"
+  },
+  {
+    "type": "input",
+    "question": "9. Преобразуйте двоичное число в знаковое десятичное (дополнительный код):\n1001 01112 =",
+    "correct_answer": "-105"
+  },
+  {
+    "type": "input",
+    "question": "10. Преобразуйте следующее упакованное BCD-число в десятичное число:\n1000 0111 0100 10012 =",
+    "correct_answer": "8749"
+  },
+  {
+    "type": "table",
+    "question": "11. Заполните таблицу.",
+    "columns": ["Число", "dd", "dq", "dt"],
+    "rows": 5,
+    "answers": [
+      {"row": 0, "col": 0, "correct": "1008"},
+      {"row": 0, "col": 1, "correct": "447C0000"},
+      {"row": 0, "col": 2, "value" : "4083F80000000000", "fixed": true},
+      {"row": 0, "col": 3, "correct": "4004F80000000000"},
+
+      {"row": 1, "col": 0, "correct": "43.125"},
+      {"row": 1, "col": 1, "correct": "422C8000"},
+      {"row": 1, "col": 2, "correct": "4045900000000000"},
+      {"row": 1, "col": 3, "value" : "4004B20000000000", "fixed": true},
+
+      {"row": 2, "col": 0, "value" : "12.5", "fixed": true},
+      {"row": 2, "col": 1, "correct": "41480000"},
+      {"row": 2, "col": 2, "correct": "4029000000000000"},
+      {"row": 2, "col": 3, "correct": "4002900000000000"},
+
+      {"row": 3, "col": 0, "correct": "0.484375"},
+      {"row": 3, "col": 1, "value" : "3EF80000", "fixed": true},
+      {"row": 3, "col": 2, "correct": "3FDF000000000000"},
+      {"row": 3, "col": 3, "correct": "3FFDF00000000000"},
+
+      {"row": 4, "col": 0, "correct": "-237.5"},
+      {"row": 4, "col": 1, "correct": "C36D8000"},
+      {"row": 4, "col": 2, "value" : "C06D600000000000", "fixed": true},
+      {"row": 4, "col": 3, "correct": "C06DB00000000000"}
+    ]
+  }
+]

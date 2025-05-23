@@ -1,0 +1,663 @@
+[
+  {
+    "type": "info",
+    "text": "Тест 2. Режимы адресации\nПравила выполнения теста\nПеред Вами представлена последовательность команд. Необходимо указать, как изменятся регистры и/или ячейки памяти адресного пространства после исполнения каждой команды с учётом контекста в виде первоначальных значений регистров и состояния адресного пространства, а также результатов работы предыдущих команд. Следовательно, ошибка в предыдущем задании может привести к тому, что последующие ответы на задания (даже при корректной логике ответа) могут быть некорректны.\nВсе ответы даются в виде чисел в шестнадцатеричной системе счисления. Цифры A, B, C, D, E, F пишутся заглавными латинскими буквами. Заполнять необходимо только ячейки, которые изменили своё значение после исполнения инструкции. Другие ячейки НИКАК заполнять НЕ НУЖНО!\nБудьте, пожалуйста, внимательны при заполнении полей с ответами.\nУдачной охоты, сталкер!\n\nВариант 1\nЧасть 1\nПервые 128 байт сегмента данных (т.е. сегмента, начинающегося с адреса, указанного в сегментном регистре DS!!!) содержат следующие данные:\n00h\t01h\t02h\t03h\t04h\t05h\t06h\t07h\t08h\t09h\t0Ah\t0Bh\t0Ch\t0Dh\t0Eh\t0Fh\n00h\t5A\t3D\t8F\t12\t9E\tF7\t4B\t70\t24\tC9\t1B\tAF\tDE\t6C\tB5\t03\n10h\t7A\t8D\t0A\tED\t6E\tC2\t97\t53\t21\tB8\t4D\t16\tF9\t2E\t43\t90\n20h\t8C\t29\t47\tBE\t01\tCD\t63\tFA\t85\t36\t7D\t58\tE4\t93\t2D\t10\n30h\t5F\t84\t99\t5C\t3A\t0B\tAC\tDF\t7E\t49\tE7\t82\t6A\tB1\t54\t2F\n40h\t3F\t6D\tA0\tD4\t2A\t33\t5E\t91\t0D\tEC\t72\t9A\t0F\t44\t87\tCB\n50h\t20\tCB\t1E\t7F\t45\t68\t27\tFC\t09\tA5\tD2\t3C\t98\t0E\t62\t8B\n60h\tE1\t7B\t0C\t55\t88\t1F\tAA\tB2\t76\t4E\tD3\t67\tFE\t39\tA8\t50\n70h\t61\t9F\t2C\tF0\tDA\tBD\t8E\t73\t1D\t6B\tCE\t05\t34\t7C\tE9\t0A\n\nСтартовые значения регистров:\nAX = 3D8Fh\tBX = 0040h\tCX = 9E12h\tDX = 1B70h\tSI = 0020h\tDI = 0004h\tBP = 0010h\tSP = FFFEh\tCS = 0100h\tDS = 1A00h\tSS = 19FFh\tES = 1A03h"
+  },
+  {
+    "type": "registers",
+    "question": "1. mov ax, [bx]\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "registers": [
+      {"name": "AX", "correct": "6D3F"},
+      {"name": "BX", "correct": ""},
+      {"name": "CX", "correct": ""},
+      {"name": "DX", "correct": ""},
+      {"name": "SI", "correct": ""},
+      {"name": "DI", "correct": ""},
+      {"name": "BP", "correct": ""},
+      {"name": "SP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""}
+    ]
+  },
+  {
+    "type": "table",
+    "question": "2. mov [si + 4], dx\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "rows": 8,
+    "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
+    "answers": [
+      {"row": 2, "col": 4, "correct": "70"},
+      {"row": 2, "col": 5, "correct": "1B"}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "3. mov cx, 9E12h\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "registers": [
+      {"name": "AX", "correct": ""},
+      {"name": "BX", "correct": ""},
+      {"name": "CX", "correct": "9E12"},
+      {"name": "DX", "correct": ""},
+      {"name": "SI", "correct": ""},
+      {"name": "DI", "correct": ""},
+      {"name": "BP", "correct": ""},
+      {"name": "SP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""}
+    ]
+  },
+  {
+    "type": "table",
+    "question": "4. mov es:[di + 2Ah], cx\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "rows": 8,
+    "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
+    "answers": [
+      {"row": 5, "col": 2, "correct": "12"},
+      {"row": 5, "col": 3, "correct": "9E"}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "5. mov dh, [bp + 5]\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "registers": [
+      {"name": "AX", "correct": ""},
+      {"name": "BX", "correct": ""},
+      {"name": "CX", "correct": ""},
+      {"name": "DX", "correct": "1BC2"},
+      {"name": "SI", "correct": ""},
+      {"name": "DI", "correct": ""},
+      {"name": "BP", "correct": ""},
+      {"name": "SP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""}
+    ]
+  },
+  {
+    "type": "table",
+    "question": "6. mov word ptr [bx + di + 10h], 5F7Bh\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "rows": 8,
+    "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
+    "answers": [
+      {"row": 5, "col": 4, "correct": "7B"},
+      {"row": 5, "col": 5, "correct": "5F"}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "7. mov di, [50h]\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "registers": [
+      {"name": "AX", "correct": ""},
+      {"name": "BX", "correct": ""},
+      {"name": "CX", "correct": ""},
+      {"name": "DX", "correct": ""},
+      {"name": "SI", "correct": ""},
+      {"name": "DI", "correct": "CB20"},
+      {"name": "BP", "correct": ""},
+      {"name": "SP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "8. mov sp, cx\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "registers": [
+      {"name": "AX", "correct": ""},
+      {"name": "BX", "correct": ""},
+      {"name": "CX", "correct": ""},
+      {"name": "DX", "correct": ""},
+      {"name": "SI", "correct": ""},
+      {"name": "DI", "correct": ""},
+      {"name": "BP", "correct": ""},
+      {"name": "SP", "correct": "9E12"},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""}
+    ]
+  },
+  {
+    "type": "table",
+    "question": "9. mov [bp + si - 8], bl\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "rows": 8,
+    "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
+    "answers": [
+      {"row": 1, "col": 8, "correct": "40"}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "10. mov ax, cs\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "registers": [
+      {"name": "AX", "correct": "0100"},
+      {"name": "BX", "correct": ""},
+      {"name": "CX", "correct": ""},
+      {"name": "DX", "correct": ""},
+      {"name": "SI", "correct": ""},
+      {"name": "DI", "correct": ""},
+      {"name": "BP", "correct": ""},
+      {"name": "SP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""}
+    ]
+  },
+  {
+    "type": "table",
+    "question": "11. mov word ptr [bx + 2Dh], ACEDh\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "rows": 8,
+    "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
+    "answers": [
+      {"row": 6, "col": 13, "correct": "ED"},
+      {"row": 6, "col": 14, "correct": "AC"}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "12. mov dx, [si + 2]\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "registers": [
+      {"name": "AX", "correct": ""},
+      {"name": "BX", "correct": ""},
+      {"name": "CX", "correct": ""},
+      {"name": "DX", "correct": "BE47"},
+      {"name": "SI", "correct": ""},
+      {"name": "DI", "correct": ""},
+      {"name": "BP", "correct": ""},
+      {"name": "SP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "13. mov cx, dx\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "registers": [
+      {"name": "AX", "correct": ""},
+      {"name": "BX", "correct": ""},
+      {"name": "CX", "correct": "BE47"},
+      {"name": "DX", "correct": ""},
+      {"name": "SI", "correct": ""},
+      {"name": "DI", "correct": ""},
+      {"name": "BP", "correct": ""},
+      {"name": "SP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""}
+    ]
+  },
+  {
+    "type": "table",
+    "question": "14. mov byte ptr [bp + si], 0AAh\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "rows": 8,
+    "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
+    "answers": [
+      {"row": 2, "col": 0, "correct": "AA"}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "15. mov bx, es:[16]\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "registers": [
+      {"name": "AX", "correct": ""},
+      {"name": "BX", "correct": "6D3F"},
+      {"name": "CX", "correct": ""},
+      {"name": "DX", "correct": ""},
+      {"name": "SI", "correct": ""},
+      {"name": "DI", "correct": ""},
+      {"name": "BP", "correct": ""},
+      {"name": "SP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "16. mov ax, sp\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "registers": [
+      {"name": "AX", "correct": "9E12"},
+      {"name": "BX", "correct": ""},
+      {"name": "CX", "correct": ""},
+      {"name": "DX", "correct": ""},
+      {"name": "SI", "correct": ""},
+      {"name": "DI", "correct": ""},
+      {"name": "BP", "correct": ""},
+      {"name": "SP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""}
+    ]
+  },
+  {
+    "type": "table",
+    "question": "17. mov [bp + 10], al\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "rows": 8,
+    "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
+    "answers": [
+      {"row": 0, "col": 7, "correct": "12"}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "18. mov ax, [bx + si + 92E1h]\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "registers": [
+      {"name": "AX", "correct": "3D5A"},
+      {"name": "BX", "correct": ""},
+      {"name": "CX", "correct": ""},
+      {"name": "DX", "correct": ""},
+      {"name": "SI", "correct": ""},
+      {"name": "DI", "correct": ""},
+      {"name": "BP", "correct": ""},
+      {"name": "SP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""}
+    ]
+  },
+  {
+    "type": "table",
+    "question": "19. mov word ptr [3Bh], CAFEh\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "rows": 8,
+    "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
+    "answers": [
+      {"row": 3, "col": 11, "correct": "FE"},
+      {"row": 3, "col": 12, "correct": "CA"}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "20. mov di, [bx + di + 0C800h]\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "registers": [
+      {"name": "AX", "correct": ""},
+      {"name": "BX", "correct": ""},
+      {"name": "CX", "correct": ""},
+      {"name": "DX", "correct": ""},
+      {"name": "SI", "correct": ""},
+      {"name": "DI", "correct": "8B00"},
+      {"name": "BP", "correct": ""},
+      {"name": "SP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""}
+    ]
+  },
+  {
+    "type": "info",
+    "text": "Часть 2\nПервые 128 байт сегмента данных (т.е. сегмента, начинающегося с адреса, указанного в сегментном регистре DS!!!) содержат следующие данные:\n00h\t01h\t02h\t03h\t04h\t05h\t06h\t07h\t08h\t09h\t0Ah\t0Bh\t0Ch\t0Dh\t0Eh\t0Fh\n00h\t7C\tA5\t1E\t43\t8B\t0F\t62\tD9\t35\tCA\t2D\tB8\t67\tE2\t19\t74\n10h\t8D\t3A\tC7\t50\tEB\t26\t9F\t04\t71\tDE\t4B\tB4\t21\t8E\t3F\tCC\n20h\t9D\t32\tCF\t58\tE6\t71\t3B\t8E\t07\tF4\t5B\t20\tAD\t4A\t87\tFE\n30h\t65\tD2\t29\tB6\t1D\t8A\t47\tF0\t3D\tAA\t17\t84\t51\tEE\t7B\t06\n40h\t4E\t81\tB7\t2A\t15\tDC\t49\tA2\t6D\t38\t93\tCE\t51\tBC\t23\t90\n50h\t0B\t74\tEF\t42\tFD\t68\tD3\t5E\t89\t14\tA7\t3A\tCD\t60\tFB\t26\n60h\tF3\t6C\t0D\t9A\t77\t24\tBF\t50\tE9\t16\tC2\t7F\t08\tD5\t6A\t31\n70h\tAE\t4B\t98\t25\t82\t3F\tCC\t79\tE6\t53\tC0\t2D\t9E\t0B\tB8\t45\n\nСтартовые значения регистров:\nEAX = 7CA51E43h\tEBX = 00000015h\tECX = 8B0F62D9h\tEDX = 35CA2DB8h\tESI = 00000030h\tEDI = 00000000h\tEBP = 0004E671h\tESP = 00009000h\tCS = 0100h\tDS = 2B00h\tSS = 2AFFh\tES = 2B02h\tFS = 2C00h\tGS = 3000h"
+  },
+  {
+    "type": "registers",
+    "question": "1. mov eax, [ebx + esi]\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": "6DA249DC"},
+      {"name": "EBX", "correct": ""},
+      {"name": "ECX", "correct": ""},
+      {"name": "EDX", "correct": ""},
+      {"name": "ESI", "correct": ""},
+      {"name": "EDI", "correct": ""},
+      {"name": "EBP", "correct": ""},
+      {"name": "ESP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  },
+  {
+    "type": "table",
+    "question": "2. mov [edi + 10h], ecx\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "rows": 8,
+    "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
+    "answers": [
+      {"row": 1, "col": 0, "correct": "D9"},
+      {"row": 1, "col": 1, "correct": "62"},
+      {"row": 1, "col": 2, "correct": "0F"},
+      {"row": 1, "col": 3, "correct": "8B"}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "3. mov edx, 1Ah\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": ""},
+      {"name": "EBX", "correct": ""},
+      {"name": "ECX", "correct": ""},
+      {"name": "EDX", "correct": "0000001A"},
+      {"name": "ESI", "correct": ""},
+      {"name": "EDI", "correct": ""},
+      {"name": "EBP", "correct": ""},
+      {"name": "ESP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  },
+  {
+    "type": "table",
+    "question": "4. mov [esi + edx*2 + 5], edx\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "rows": 8,
+    "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
+    "answers": [
+      {"row": 6, "col": 9, "correct": "1A"},
+      {"row": 6, "col": 10, "correct": "00"},
+      {"row": 6, "col": 11, "correct": "00"},
+      {"row": 6, "col": 12, "correct": "00"}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "5. mov ecx, [100]\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": ""},
+      {"name": "EBX", "correct": ""},
+      {"name": "ECX", "correct": "8B0F62D9"},
+      {"name": "EDX", "correct": ""},
+      {"name": "ESI", "correct": ""},
+      {"name": "EDI", "correct": ""},
+      {"name": "EBP", "correct": ""},
+      {"name": "ESP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  },
+  {
+    "type": "table",
+    "question": "6. mov dword ptr es:[ebx], 9D3FE8C1h\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "rows": 8,
+    "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
+    "answers": [
+      {"row": 1, "col": 5, "correct": "C1"},
+      {"row": 1, "col": 6, "correct": "E8"},
+      {"row": 1, "col": 7, "correct": "3F"},
+      {"row": 1, "col": 8, "correct": "9D"}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "7. mov eax, ecx\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": "8B0F62D9"},
+      {"name": "EBX", "correct": ""},
+      {"name": "ECX", "correct": ""},
+      {"name": "EDX", "correct": ""},
+      {"name": "ESI", "correct": ""},
+      {"name": "EDI", "correct": ""},
+      {"name": "EBP", "correct": ""},
+      {"name": "ESP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  },
+  {
+    "type": "table",
+    "question": "8. mov [edi], eax\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "rows": 8,
+    "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
+    "answers": [
+      {"row": 0, "col": 0, "correct": "D9"},
+      {"row": 0, "col": 1, "correct": "62"},
+      {"row": 0, "col": 2, "correct": "0F"},
+      {"row": 0, "col": 3, "correct": "8B"}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "9. mov ebx, [esi + ebx*2 + 6]\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": ""},
+      {"name": "EBX", "correct": "9A0D6CF3"},
+      {"name": "ECX", "correct": ""},
+      {"name": "EDX", "correct": ""},
+      {"name": "ESI", "correct": ""},
+      {"name": "EDI", "correct": ""},
+      {"name": "EBP", "correct": ""},
+      {"name": "ESP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "10. mov ecx, ebx\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": ""},
+      {"name": "EBX", "correct": ""},
+      {"name": "ECX", "correct": "9A0D6CF3"},
+      {"name": "EDX", "correct": ""},
+      {"name": "ESI", "correct": ""},
+      {"name": "EDI", "correct": ""},
+      {"name": "EBP", "correct": ""},
+      {"name": "ESP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "11. mov esi, 12\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": ""},
+      {"name": "EBX", "correct": ""},
+      {"name": "ECX", "correct": ""},
+      {"name": "EDX", "correct": ""},
+      {"name": "ESI", "correct": "00000012"},
+      {"name": "EDI", "correct": ""},
+      {"name": "EBP", "correct": ""},
+      {"name": "ESP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "12. mov ebp, [esi + edi + 25]\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": ""},
+      {"name": "EBX", "correct": ""},
+      {"name": "ECX", "correct": ""},
+      {"name": "EDX", "correct": ""},
+      {"name": "ESI", "correct": ""},
+      {"name": "EDI", "correct": ""},
+      {"name": "EBP", "correct": "17AA3DF0"},
+      {"name": "ESP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "13. mov eax, [esi - 8]\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": "E267B82D"},
+      {"name": "EBX", "correct": ""},
+      {"name": "ECX", "correct": ""},
+      {"name": "EDX", "correct": ""},
+      {"name": "ESI", "correct": ""},
+      {"name": "EDI", "correct": ""},
+      {"name": "EBP", "correct": ""},
+      {"name": "ESP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "14. mov esp, eax\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": ""},
+      {"name": "EBX", "correct": ""},
+      {"name": "ECX", "correct": ""},
+      {"name": "EDX", "correct": ""},
+      {"name": "ESI", "correct": ""},
+      {"name": "EDI", "correct": ""},
+      {"name": "EBP", "correct": ""},
+      {"name": "ESP", "correct": "E267B82D"},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  },
+  {
+    "type": "table",
+    "question": "15. mov [esi - 10], esp\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "rows": 8,
+    "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
+    "answers": [
+      {"row": 0, "col": 2, "correct": "2D"},
+      {"row": 0, "col": 3, "correct": "B8"},
+      {"row": 0, "col": 4, "correct": "67"},
+      {"row": 0, "col": 5, "correct": "E2"}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "16. mov eax, 20h\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": "00000020"},
+      {"name": "EBX", "correct": ""},
+      {"name": "ECX", "correct": ""},
+      {"name": "EDX", "correct": ""},
+      {"name": "ESI", "correct": ""},
+      {"name": "EDI", "correct": ""},
+      {"name": "EBP", "correct": ""},
+      {"name": "ESP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "17. mov ebx, [20h]\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": ""},
+      {"name": "EBX", "correct": "58CF329D"},
+      {"name": "ECX", "correct": ""},
+      {"name": "EDX", "correct": ""},
+      {"name": "ESI", "correct": ""},
+      {"name": "EDI", "correct": ""},
+      {"name": "EBP", "correct": ""},
+      {"name": "ESP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "18. mov bh, 0\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": ""},
+      {"name": "EBX", "correct": "58CF009D"},
+      {"name": "ECX", "correct": ""},
+      {"name": "EDX", "correct": ""},
+      {"name": "ESI", "correct": ""},
+      {"name": "EDI", "correct": ""},
+      {"name": "EBP", "correct": ""},
+      {"name": "ESP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "19. mov al, 31\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": "00000031"},
+      {"name": "EBX", "correct": ""},
+      {"name": "ECX", "correct": ""},
+      {"name": "EDX", "correct": ""},
+      {"name": "ESI", "correct": ""},
+      {"name": "EDI", "correct": ""},
+      {"name": "EBP", "correct": ""},
+      {"name": "ESP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  },
+  {
+    "type": "registers",
+    "question": "20. mov edi, ebx\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "registers": [
+      {"name": "EAX", "correct": ""},
+      {"name": "EBX", "correct": ""},
+      {"name": "ECX", "correct": ""},
+      {"name": "EDX", "correct": ""},
+      {"name": "ESI", "correct": ""},
+      {"name": "EDI", "correct": "58CF009D"},
+      {"name": "EBP", "correct": ""},
+      {"name": "ESP", "correct": ""},
+      {"name": "CS", "correct": ""},
+      {"name": "DS", "correct": ""},
+      {"name": "SS", "correct": ""},
+      {"name": "ES", "correct": ""},
+      {"name": "FS", "correct": ""},
+      {"name": "GS", "correct": ""}
+    ]
+  }
+]
