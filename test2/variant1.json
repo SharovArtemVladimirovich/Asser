@@ -5,7 +5,7 @@
   },
   {
     "type": "registers",
-    "question": "1. mov ax, [bx]\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "1. mov ax, [bx]",
     "registers": [
       {"name": "AX", "correct": "6D3F"},
       {"name": "BX", "correct": ""},
@@ -23,7 +23,7 @@
   },
   {
     "type": "table",
-    "question": "2. mov [si + 4], dx\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "2. mov [si + 4], dx",
     "rows": 8,
     "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
     "answers": [
@@ -33,7 +33,7 @@
   },
   {
     "type": "registers",
-    "question": "3. mov cx, 9E12h\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "3. mov cx, 9E12h",
     "registers": [
       {"name": "AX", "correct": ""},
       {"name": "BX", "correct": ""},
@@ -51,7 +51,7 @@
   },
   {
     "type": "table",
-    "question": "4. mov es:[di + 2Ah], cx\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "4. mov es:[di + 2Ah]",
     "rows": 8,
     "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
     "answers": [
@@ -61,7 +61,7 @@
   },
   {
     "type": "registers",
-    "question": "5. mov dh, [bp + 5]\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "5. mov dh, [bp + 5]",
     "registers": [
       {"name": "AX", "correct": ""},
       {"name": "BX", "correct": ""},
@@ -79,7 +79,7 @@
   },
   {
     "type": "table",
-    "question": "6. mov word ptr [bx + di + 10h], 5F7Bh\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "6. mov word ptr [bx + di + 10h], 5F7Bh",
     "rows": 8,
     "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
     "answers": [
@@ -302,7 +302,7 @@
   },
   {
     "type": "registers",
-    "question": "1. mov eax, [ebx + esi]\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "1. mov eax, [ebx + esi]",
     "registers": [
       {"name": "EAX", "correct": "6DA249DC"},
       {"name": "EBX", "correct": ""},
@@ -334,7 +334,7 @@
   },
   {
     "type": "registers",
-    "question": "3. mov edx, 1Ah\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "3. mov edx, 1Ah",
     "registers": [
       {"name": "EAX", "correct": ""},
       {"name": "EBX", "correct": ""},
@@ -366,7 +366,7 @@
   },
   {
     "type": "registers",
-    "question": "5. mov ecx, [100]\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "5. mov ecx, [100]",
     "registers": [
       {"name": "EAX", "correct": ""},
       {"name": "EBX", "correct": ""},
@@ -398,7 +398,7 @@
   },
   {
     "type": "registers",
-    "question": "7. mov eax, ecx\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "7. mov eax, ecx",
     "registers": [
       {"name": "EAX", "correct": "8B0F62D9"},
       {"name": "EBX", "correct": ""},
@@ -430,7 +430,7 @@
   },
   {
     "type": "registers",
-    "question": "9. mov ebx, [esi + ebx*2 + 6]\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "9. mov ebx, [esi + ebx*2 + 6]",
     "registers": [
       {"name": "EAX", "correct": ""},
       {"name": "EBX", "correct": "9A0D6CF3"},
@@ -450,7 +450,7 @@
   },
   {
     "type": "registers",
-    "question": "10. mov ecx, ebx\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "10. mov ecx, ebx",
     "registers": [
       {"name": "EAX", "correct": ""},
       {"name": "EBX", "correct": ""},
@@ -470,7 +470,7 @@
   },
   {
     "type": "registers",
-    "question": "11. mov esi, 12\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "11. mov esi, 12",
     "registers": [
       {"name": "EAX", "correct": ""},
       {"name": "EBX", "correct": ""},
@@ -490,7 +490,7 @@
   },
   {
     "type": "registers",
-    "question": "12. mov ebp, [esi + edi + 25]\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "12. mov ebp, [esi + edi + 25]",
     "registers": [
       {"name": "EAX", "correct": ""},
       {"name": "EBX", "correct": ""},
@@ -510,7 +510,7 @@
   },
   {
     "type": "registers",
-    "question": "13. mov eax, [esi - 8]\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "13. mov eax, [esi - 8]",
     "registers": [
       {"name": "EAX", "correct": "E267B82D"},
       {"name": "EBX", "correct": ""},
@@ -530,7 +530,7 @@
   },
   {
     "type": "registers",
-    "question": "14. mov esp, eax\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "14. mov esp, eax",
     "registers": [
       {"name": "EAX", "correct": ""},
       {"name": "EBX", "correct": ""},
@@ -562,7 +562,7 @@
   },
   {
     "type": "registers",
-    "question": "16. mov eax, 20h\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "16. mov eax, 20h",
     "registers": [
       {"name": "EAX", "correct": "00000020"},
       {"name": "EBX", "correct": ""},
@@ -582,7 +582,7 @@
   },
   {
     "type": "registers",
-    "question": "17. mov ebx, [20h]\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "17. mov ebx, [20h]",
     "registers": [
       {"name": "EAX", "correct": ""},
       {"name": "EBX", "correct": "58CF329D"},
@@ -602,7 +602,7 @@
   },
   {
     "type": "registers",
-    "question": "18. mov bh, 0\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "18. mov bh, 0",
     "registers": [
       {"name": "EAX", "correct": ""},
       {"name": "EBX", "correct": "58CF009D"},
@@ -622,7 +622,7 @@
   },
   {
     "type": "registers",
-    "question": "19. mov al, 31\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "19. mov al, 31",
     "registers": [
       {"name": "EAX", "correct": "00000031"},
       {"name": "EBX", "correct": ""},
@@ -642,7 +642,7 @@
   },
   {
     "type": "registers",
-    "question": "20. mov edi, ebx\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "20. mov edi, ebx",
     "registers": [
       {"name": "EAX", "correct": ""},
       {"name": "EBX", "correct": ""},

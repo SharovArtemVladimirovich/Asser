@@ -4,6 +4,7 @@
 #include "EWIEGA46WW/moc_mainscreen.cpp"
 #include "EWIEGA46WW/moc_mainwindow.cpp"
 #include "EWIEGA46WW/moc_manuals.cpp"
+#include "EWIEGA46WW/moc_resultsdialog.cpp"
 #include "EWIEGA46WW/moc_starttestdialog.cpp"
 #include "EWIEGA46WW/moc_tests.cpp"
 #include "EWIEGA46WW/moc_testtemplatedialog.cpp"

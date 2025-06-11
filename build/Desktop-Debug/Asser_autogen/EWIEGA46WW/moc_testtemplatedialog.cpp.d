@@ -248,6 +248,7 @@
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QJsonArray \
   /usr/include/qt6/QtCore/QJsonObject \
+  /usr/include/qt6/QtCore/QTime \
   /usr/include/qt6/QtCore/QTimer \
   /usr/include/qt6/QtCore/QVector \
   /usr/include/qt6/QtCore/q20functional.h \

@@ -12,12 +12,16 @@
 #include <QJsonObject>
 #include <QScroller>
 #include <QScrollBar>
+#include "resultsdialog.h"
+#include <QTime>
 
 TestTemplateDialog::TestTemplateDialog(TestType testType, const QString& variant, const QString& userName, QWidget *parent)
     : QDialog(parent), timeLeft(70*60), currentTestType(testType), currentVariant(variant), currentUserName(userName)
 {
     setWindowTitle(QString("Тест - Вариант %1").arg(variant));
     resize(1100, 700);
+
+    startTime = QTime::currentTime();
 
     setupUI();
 
@@ -105,6 +109,15 @@ void TestTemplateDialog::setupUI() {
     connect(finishButton, &QPushButton::clicked, this, &TestTemplateDialog::finishTest);
 
     mainLayout->addWidget(navFrame, 0);
+    // Создаем кнопки для перехода между частями
+    nextPartButton = new QPushButton("Следующая страница", this);
+    prevPartButton = new QPushButton("Предыдущая страница", this);
+
+    connect(nextPartButton, &QPushButton::clicked, this, &TestTemplateDialog::goToNextPart);
+    connect(prevPartButton, &QPushButton::clicked, this, &TestTemplateDialog::goToPrevPart);
+
+    nextPartButton->setVisible(false);
+    prevPartButton->setVisible(false);
 }
 
 void TestTemplateDialog::loadQuestionsFromJson(const QString& filename) {
@@ -117,36 +130,40 @@ void TestTemplateDialog::loadQuestionsFromJson(const QString& filename) {
     QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
     QJsonArray arr = doc.array();
 
-    int qIdx = 0;
-    int navIdx = 0;
+    part1Questions.clear();
+    part2Questions.clear();
+    part1Info.clear();
+    part2Info.clear();
+    int part = 0;
+    bool hasPart2 = false;
     for (const QJsonValue& v : arr) {
         QJsonObject obj = v.toObject();
         QString type = obj["type"].toString();
-
+        if (type == "info") {
+            QString text = obj["text"].toString();
+            if (text.contains("Часть 2")) {
+                part = 1;
+                hasPart2 = true;
+                part2Info = text;
+            } else {
+                part1Info = text;
+            }
+            continue;
+        }
         QuestionWidget qw;
         qw.type = type;
-
         QFrame* frame = new QFrame;
         frame->setFrameShape(QFrame::StyledPanel);
         QVBoxLayout* vbox = new QVBoxLayout(frame);
-
-        if (type == "info") {
-            QLabel* infoLabel = new QLabel(obj["text"].toString());
-            infoLabel->setWordWrap(true);
-            vbox->addWidget(infoLabel);
-        } else {
-            QLabel* qLabel = new QLabel(obj["question"].toString());
-            qLabel->setWordWrap(true);
-            vbox->addWidget(qLabel);
-        }
-
+        QLabel* qLabel = new QLabel(obj["question"].toString());
+        qLabel->setWordWrap(true);
+        vbox->addWidget(qLabel);
         if (type == "input") {
             QLineEdit* edit = new QLineEdit;
             vbox->addWidget(edit);
             qw.edits.append(edit);
             qw.correct = obj["correct_answer"].toString();
-        }
-        else if (type == "registers") {
+        } else if (type == "registers") {
             QJsonArray regs = obj["registers"].toArray();
             QHBoxLayout* regLayout = new QHBoxLayout;
             QVector<QLineEdit*> regEdits;
@@ -155,14 +172,9 @@ void TestTemplateDialog::loadQuestionsFromJson(const QString& filename) {
                 QJsonObject regObj = regVal.toObject();
                 QString regName = regObj["name"].toString();
                 QString correct = regObj["correct"].toString();
-
                 QLabel* regLabel = new QLabel(regName + " =");
                 QLineEdit* regEdit = new QLineEdit;
                 regEdit->setFixedWidth(60);
-                if (!correct.isEmpty()) {
-                    regEdit->setText(correct);
-                    regEdit->setReadOnly(true);
-                }
                 regLayout->addWidget(regLabel);
                 regLayout->addWidget(regEdit);
                 regEdits.append(regEdit);
@@ -171,22 +183,19 @@ void TestTemplateDialog::loadQuestionsFromJson(const QString& filename) {
             regLayout->addStretch();
             vbox->addLayout(regLayout);
             qw.edits = regEdits;
-            qw.corrects = regCorrects; // ← сохраняем правильные ответы
-        }
-        else if (type == "table") {
+            qw.corrects = regCorrects;
+        } else if (type == "table") {
             int rows = obj["rows"].toInt();
             QJsonArray columnsArr = obj["columns"].toArray();
             QStringList columns;
             for (const QJsonValue& col : columnsArr)
                 columns << col.toString();
-
             QTableWidget* table = new QTableWidget(rows, columns.size());
             table->setHorizontalHeaderLabels(columns);
             table->verticalHeader()->setVisible(false);
             table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
             table->verticalHeader()->setDefaultSectionSize(30);
             table->setMinimumHeight(rows * 30 + 40);
-
             QVector<QVector<TableCell>> tableEdits(rows, QVector<TableCell>(columns.size()));
             for (int r = 0; r < rows; ++r) {
                 for (int c = 0; c < columns.size(); ++c) {
@@ -201,7 +210,6 @@ void TestTemplateDialog::loadQuestionsFromJson(const QString& filename) {
                 QJsonObject aobj = av.toObject();
                 int row = aobj["row"].toInt();
                 int col = aobj["col"].toInt();
-
                 if (row >= 0 && row < rows && col >= 0 && col < columns.size()) {
                     if (aobj.contains("fixed") && aobj["fixed"].toBool()) {
                         QString value = aobj["value"].toString();
@@ -214,67 +222,107 @@ void TestTemplateDialog::loadQuestionsFromJson(const QString& filename) {
                     }
                 }
             }
-            qw.tableEdits = tableEdits;         // ← ОБЯЗАТЕЛЬНО!
-            vbox->addWidget(table);             // ← ОБЯЗАТЕЛЬНО!
+            qw.tableEdits = tableEdits;
+            vbox->addWidget(table);
         }
-        else if (type == "registers") {
-            QJsonArray regs = obj["registers"].toArray();
-            QHBoxLayout* regLayout = new QHBoxLayout;
-            QVector<QLineEdit*> regEdits;
-            for (const QJsonValue& regVal : regs) {
-                QJsonObject regObj = regVal.toObject();
-                QString regName = regObj["name"].toString();
-                QString correct = regObj["correct"].toString();
-
-                QLabel* regLabel = new QLabel(regName + " =");
-                QLineEdit* regEdit = new QLineEdit;
-                regEdit->setFixedWidth(60);
-                if (!correct.isEmpty()) {
-                    regEdit->setText(correct);
-                    regEdit->setReadOnly(true);
-                }
-                regLayout->addWidget(regLabel);
-                regLayout->addWidget(regEdit);
-                regEdits.append(regEdit);
-            }
-            regLayout->addStretch();
-            vbox->addLayout(regLayout);
-            qw.edits = regEdits;
-        }
-
         qw.widget = frame;
-        questionWidgets.append(qw);
-        questionsLayout->addWidget(frame);
-
-        // Кнопка навигации (только для input/table, не для info)
-        if (type == "input" || type == "table") {
-            QPushButton* navBtn = new QPushButton(QString::number(navIdx + 1));
-            navBtn->setCheckable(true);
-            navBtn->setAutoExclusive(true);
-            navBtn->setFixedSize(40, 40);
-            navBtn->setStyleSheet("QPushButton { margin: 2px; }");
-            connect(navBtn, &QPushButton::clicked, this, [this, navIdx]() { scrollToQuestion(navIdx); });
-            navButtons.append(navBtn);
-
-            int row = navIdx / 4;
-            int col = navIdx % 4;
-            navButtonsLayout->addWidget(navBtn, row, col);
-            navIdx++;
-        }
-
-        ++qIdx;
+                if (part == 0) part1Questions.append(qw);
+                else part2Questions.append(qw);
+            }
+            currentPart = 0;
+            showCurrentPart();
+}
+void TestTemplateDialog::showCurrentPart() {
+    // Очищаем layout
+    QLayoutItem* child;
+    while ((child = questionsLayout->takeAt(0)) != nullptr) {
+        if (child->widget()) child->widget()->setParent(nullptr); // detach, не delete!
+        delete child;
     }
+
+    // Добавляем info, только если он есть
+    QString infoText = (currentPart == 0 ? part1Info : part2Info);
+    if (!infoText.isEmpty()) {
+        QLabel* info = new QLabel(infoText);
+        info->setWordWrap(true);
+        info->setStyleSheet("font-weight: bold; background: #eef; padding: 8px; border-radius: 6px;");
+        questionsLayout->addWidget(info);
+    }
+
+    // Добавляем вопросы
+    const QVector<QuestionWidget>& questions = (currentPart == 0 ? part1Questions : part2Questions);
+    for (const auto& qw : questions) {
+        questionsLayout->addWidget(qw.widget);
+    }
+
+    // Кнопки перехода между частями только если есть обе части
+    if (!part2Questions.isEmpty()) {
+        if (currentPart == 0) {
+            if (questionsLayout->indexOf(nextPartButton) == -1)
+                questionsLayout->addWidget(nextPartButton);
+            nextPartButton->setVisible(true);
+            prevPartButton->setVisible(false);
+        } else {
+            if (questionsLayout->indexOf(prevPartButton) == -1)
+                questionsLayout->addWidget(prevPartButton);
+            prevPartButton->setVisible(true);
+            nextPartButton->setVisible(false);
+        }
+    } else {
+        nextPartButton->setVisible(false);
+        prevPartButton->setVisible(false);
+    }
+
     questionsLayout->addStretch();
+    updateNavButtons();
+
+    // Скроллим в начало
+    QTimer::singleShot(0, [this]() {
+        if (scrollArea && scrollArea->verticalScrollBar()) {
+            scrollArea->verticalScrollBar()->setValue(0);
+        }
+    });
 }
 
-void TestTemplateDialog::scrollToQuestion(int idx) {
-    if (idx < 0 || idx >= questionWidgets.size()) return;
-    QWidget* w = questionWidgets[idx].widget;
-    w->setFocus();
-    if (scrollArea) {
-        // Прокручиваем так, чтобы вопрос был в самом верху
-        QPoint relPos = w->mapTo(questionsWidget, QPoint(0, 0));
-        scrollArea->verticalScrollBar()->setValue(relPos.y());
+void TestTemplateDialog::goToNextPart() {
+    if (currentPart == 0 && !part2Questions.isEmpty()) {
+        currentPart = 1;
+        showCurrentPart();
+    }
+}
+void TestTemplateDialog::goToPrevPart() {
+    if (currentPart == 1) {
+        currentPart = 0;
+        showCurrentPart();
+    }
+}
+void TestTemplateDialog::updateNavButtons() {
+    // Очищаем старые кнопки
+    QLayoutItem* child;
+    while ((child = navButtonsLayout->takeAt(0)) != nullptr) {
+        if (child->widget()) child->widget()->deleteLater();
+        delete child;
+    }
+    navButtons.clear();
+    const QVector<QuestionWidget>& questions = (currentPart == 0 ? part1Questions : part2Questions);
+    for (int i = 0; i < questions.size(); ++i) {
+        QPushButton* navBtn = new QPushButton(QString::number(i + 1));
+        navBtn->setCheckable(true);
+        navBtn->setAutoExclusive(true);
+        navBtn->setFixedSize(40, 40);
+        navBtn->setStyleSheet("QPushButton { margin: 2px; }");
+        connect(navBtn, &QPushButton::clicked, this, [this, i]() {
+            QWidget* w = (currentPart == 0 ? part1Questions[i].widget : part2Questions[i].widget);
+            w->setFocus();
+            if (scrollArea) {
+                QPoint relPos = w->mapTo(questionsWidget, QPoint(0, 0));
+                scrollArea->verticalScrollBar()->setValue(relPos.y());
+            }
+        });
+        navButtons.append(navBtn);
+        int row = i / 4;
+        int col = i % 4;
+        navButtonsLayout->addWidget(navBtn, row, col);
     }
 }
 
@@ -295,62 +343,106 @@ void TestTemplateDialog::updateTimer() {
 }
 
 void TestTemplateDialog::finishTest() {
-    timer->stop();
-    int correct = 0, total = 0;
-    int qNum = 1;
-    QStringList wrong;
-
-    for (const auto& qw : questionWidgets) {
-        // Проверка input-вопросов (одно поле для ввода)
-        if (qw.type == "input") {
-            ++total; // Всегда увеличиваем total, даже если поле пустое
-            QString user = qw.edits[0]->text().trimmed();
-            QString correctAns = qw.correct;
-            if (user == correctAns)
-                ++correct; // Ответ правильный
-            else
-                wrong << QString::number(qNum); // Ответ неправильный или пустой, добавляем в ошибки
-        }
-        // Проверка registers-вопросов (несколько полей для ввода)
-        else if (qw.type == "registers") {
-            for (int i = 0; i < qw.edits.size(); ++i) {
-                if (qw.corrects[i].isEmpty()) continue; // Не проверяем те, где нет правильного ответа
-                ++total; // Всегда увеличиваем total, даже если поле пустое
-                QString user = qw.edits[i]->text().trimmed();
-                QString correctAns = qw.corrects[i];
-                if (user == correctAns)
-                    ++correct; // Ответ правильный
-                else
-                    wrong << QString("%1 (%2)").arg(qNum).arg(i+1); // Ответ неправильный или пустой, добавляем в ошибки
-            }
-        }
-        // Проверка table-вопросов (таблица с несколькими полями для ввода)
-        else if (qw.type == "table") {
-            for (const auto& ta : qw.tableAnswers) {
-                // Пропускаем фиксированные (readonly) ячейки
-                if (qw.tableEdits[ta.row][ta.col].isFixed) continue;
-                ++total; // Всегда увеличиваем total, даже если поле пустое
-                QString user = qw.tableEdits[ta.row][ta.col].edit->text().trimmed();
-                QString correctAns = ta.correct;
-                if (user == correctAns)
-                    ++correct; // Ответ правильный
-                else
-                    wrong << QString("Таблица %1 [%2,%3]").arg(qNum).arg(ta.row+1).arg(ta.col+1); // Ответ неправильный или пустой, добавляем в ошибки
-            }
-        }
-        ++qNum;
+    // Показываем диалог подтверждения
+    QMessageBox::StandardButton reply = QMessageBox::question(
+        this,
+        "Подтверждение",
+        "Вы точно уверены, что хотите завершить тест?",
+        QMessageBox::Yes | QMessageBox::No
+    );
+    if (reply != QMessageBox::Yes) {
+        return; // Пользователь отменил завершение
     }
-
-    double score = (total > 0) ? (8.0 * correct / total) : 0.0;
-    QString scoreStr = QString::number(score, 'f', 2);
-
-    QString result = QString("%1\nВаш результат: %2 из 8.00 баллов")
-                    .arg(currentUserName)
-                    .arg(scoreStr);
-    if (!wrong.isEmpty())
-        result += "\nОшибки в вопросах: " + wrong.join(", ");
-
-    QMessageBox::information(this, "Результат", result);
+    timer->stop();
+    QVector<ResultEntry> results;
+    double totalScore = 0.0;
+    double maxScore = 8.0;
+    int totalQuestions = part1Questions.size() + part2Questions.size();
+    double perQuestion = maxScore / (totalQuestions > 0 ? totalQuestions : 1);
+    int idx = 0;
+    // Часть 1
+    for (const auto& qw : part1Questions) {
+        QString userAns;
+        double score = 0.0;
+        if (qw.type == "input") {
+            userAns = qw.edits[0]->text().trimmed();
+            if (userAns == qw.correct)
+                score = perQuestion;
+        } else if (qw.type == "registers") {
+            QStringList userList;
+            int localCorrect = 0, localTotal = 0;
+            for (int i = 0; i < qw.edits.size(); ++i) {
+                if (qw.corrects[i].isEmpty()) continue;
+                ++localTotal;
+                QString user = qw.edits[i]->text().trimmed();
+                if (!user.isEmpty()) userList << user;
+                if (user == qw.corrects[i]) ++localCorrect;
+            }
+            userAns = userList.join(", ");
+            if (localTotal > 0) score = perQuestion * localCorrect / localTotal;
+        } else if (qw.type == "table") {
+            QStringList userList;
+            int localCorrect = 0, localTotal = 0;
+            for (const auto& ta : qw.tableAnswers) {
+                if (qw.tableEdits[ta.row][ta.col].isFixed) continue;
+                ++localTotal;
+                QString user = qw.tableEdits[ta.row][ta.col].edit->text().trimmed();
+                if (!user.isEmpty()) userList << user;
+                if (user == ta.correct) ++localCorrect;
+            }
+            userAns = userList.join(", ");
+            if (localTotal > 0) score = perQuestion * localCorrect / localTotal;
+        }
+        QLabel* label = qw.widget->findChild<QLabel*>();
+        QString questionText = label ? label->text() : QString("Вопрос %1").arg(idx+1);
+        results.append({questionText, userAns, score, perQuestion, 1});
+        totalScore += score;
+        ++idx;
+    }
+    // Часть 2
+    for (const auto& qw : part2Questions) {
+        QString userAns;
+        double score = 0.0;
+        if (qw.type == "input") {
+            userAns = qw.edits[0]->text().trimmed();
+            if (userAns == qw.correct)
+                score = perQuestion;
+        } else if (qw.type == "registers") {
+            QStringList userList;
+            int localCorrect = 0, localTotal = 0;
+            for (int i = 0; i < qw.edits.size(); ++i) {
+                if (qw.corrects[i].isEmpty()) continue;
+                ++localTotal;
+                QString user = qw.edits[i]->text().trimmed();
+                if (!user.isEmpty()) userList << user;
+                if (user == qw.corrects[i]) ++localCorrect;
+            }
+            userAns = userList.join(", ");
+            if (localTotal > 0) score = perQuestion * localCorrect / localTotal;
+        } else if (qw.type == "table") {
+            QStringList userList;
+            int localCorrect = 0, localTotal = 0;
+            for (const auto& ta : qw.tableAnswers) {
+                if (qw.tableEdits[ta.row][ta.col].isFixed) continue;
+                ++localTotal;
+                QString user = qw.tableEdits[ta.row][ta.col].edit->text().trimmed();
+                if (!user.isEmpty()) userList << user;
+                if (user == ta.correct) ++localCorrect;
+            }
+            userAns = userList.join(", ");
+            if (localTotal > 0) score = perQuestion * localCorrect / localTotal;
+        }
+        QLabel* label = qw.widget->findChild<QLabel*>();
+        QString questionText = label ? label->text() : QString("Вопрос %1").arg(idx+1);
+        results.append({questionText, userAns, score, perQuestion, 2});
+        totalScore += score;
+        ++idx;
+    }
+    QTime endTime = QTime::currentTime();
+    int secs = startTime.secsTo(endTime);
+    QString timeSpent = QString("%1:%2").arg(secs/60,2,10,QChar('0')).arg(secs%60,2,10,QChar('0'));
+    ResultsDialog dlg(results, totalScore, timeSpent, this);
+    dlg.exec();
     emit testFinished();
     accept();
 }

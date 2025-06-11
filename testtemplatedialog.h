@@ -13,7 +13,7 @@
 #include <QTableWidget>
 #include <QScrollArea>
 #include <QGridLayout>
-
+#include <QTime>
 struct TableAnswer {
     int row;
     int col;
@@ -47,17 +47,27 @@ signals:
 private slots:
     void finishTest();
     void updateTimer();
-    void scrollToQuestion(int idx);
+    void goToNextPart();
+    void goToPrevPart();
 
 private:
     void loadQuestionsFromJson(const QString& filename);
     void setupUI();
+    void showCurrentPart();
+    void updateNavButtons();
 
-    QVector<QuestionWidget> questionWidgets;
+    QVector<QuestionWidget> part1Questions;
+    QVector<QuestionWidget> part2Questions;
+    QString part1Info;
+    QString part2Info;
+    int currentPart = 0;
+
     QTimer* timer;
     QLabel* timerLabel;
     int timeLeft;
     QPushButton* finishButton;
+    QPushButton* nextPartButton;
+    QPushButton* prevPartButton;
     QWidget* questionsWidget;
     QVBoxLayout* questionsLayout;
     QVector<QPushButton*> navButtons;
@@ -67,6 +77,7 @@ private:
     TestType currentTestType;
     QString currentVariant;
     QString currentUserName;
+    QTime startTime;
 };
 
 #endif // TESTTEMPLATEDIALOG_H

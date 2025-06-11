@@ -16,6 +16,8 @@ Asser_autogen/timestamp: \
 	/home/user/Qt/Asser/manuals.cpp \
 	/home/user/Qt/Asser/manuals.h \
 	/home/user/Qt/Asser/resources.qrc \
+	/home/user/Qt/Asser/resultsdialog.cpp \
+	/home/user/Qt/Asser/resultsdialog.h \
 	/home/user/Qt/Asser/screenspace.h \
 	/home/user/Qt/Asser/starttestdialog.cpp \
 	/home/user/Qt/Asser/starttestdialog.h \
@@ -305,6 +307,8 @@ Asser_autogen/timestamp: \
 	/usr/include/qt6/QtCore/QJsonArray \
 	/usr/include/qt6/QtCore/QJsonObject \
 	/usr/include/qt6/QtCore/QPropertyAnimation \
+	/usr/include/qt6/QtCore/QString \
+	/usr/include/qt6/QtCore/QTime \
 	/usr/include/qt6/QtCore/QTimer \
 	/usr/include/qt6/QtCore/QUrl \
 	/usr/include/qt6/QtCore/QVector \

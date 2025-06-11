@@ -298,6 +298,12 @@
 			null
 		],
 		[
+			"/home/user/Qt/Asser/resultsdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_resultsdialog.cpp",
+			null
+		],
+		[
 			"/home/user/Qt/Asser/screenspace.h",
 			"MU",
 			"EWIEGA46WW/moc_screenspace.cpp",
@@ -388,6 +394,7 @@
 		[ "/home/user/Qt/Asser/mainscreen.cpp", "MU", null ],
 		[ "/home/user/Qt/Asser/mainwindow.cpp", "MU", null ],
 		[ "/home/user/Qt/Asser/manuals.cpp", "MU", null ],
+		[ "/home/user/Qt/Asser/resultsdialog.cpp", "MU", null ],
 		[ "/home/user/Qt/Asser/starttestdialog.cpp", "MU", null ],
 		[ "/home/user/Qt/Asser/tests.cpp", "MU", null ],
 		[ "/home/user/Qt/Asser/testtemplatedialog.cpp", "MU", null ]
