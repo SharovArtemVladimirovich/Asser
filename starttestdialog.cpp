@@ -3,6 +3,9 @@
 
 #include <QVBoxLayout>
 #include <QLabel>
+#include <QMessageBox>
+
+
 
 
 StartTestDialog::StartTestDialog(QWidget *parent, const QString &testName) : QDialog(parent) {
@@ -35,7 +38,37 @@ StartTestDialog::StartTestDialog(QWidget *parent, const QString &testName) : QDi
 
     // Кнопка "Поехали!"
     QPushButton *startBtn = new QPushButton("Поехали!", this);
-    connect(startBtn, &QPushButton::clicked, this, &QDialog::accept);
+    // connect(startBtn, &QPushButton::clicked, this, &QDialog::accept);
+    connect(startBtn, &QPushButton::clicked, this, [this]() {
+        QString name = nameEdit->text().trimmed();
+
+        // Проверка длины
+        if (name.length() < 2 || name.length() > 50) {
+            QMessageBox::warning(this, "Ошибка", "Имя должно содержать от 2 до 50 символов!");
+            return;
+        }
+
+        // Проверка на наличие минимум 2 букв
+        int letterCount = 0;
+        for (const QChar &c : name) {
+            if (c.isLetter()) letterCount++;
+        }
+        if (letterCount < 2) {
+            QMessageBox::warning(this, "Ошибка", "Имя должно содержать минимум 2 буквы!");
+            return;
+        }
+
+        // Проверка на допустимые символы
+        QString allowedSymbols = "@~$^+=-&#*:.№!";
+        for (const QChar &c : name) {
+            if (!c.isLetter() && !c.isDigit() && !allowedSymbols.contains(c)) {
+                QMessageBox::warning(this, "Ошибка", "Имя содержит недопустимые символы! Разрешены только буквы, цифры и символы: @~$^+=-&#*:.№!");
+                return;
+            }
+        }
+
+        accept();
+    });
 
     layout -> addWidget (opisanie);
     layout -> addWidget (labelVar);

@@ -492,6 +492,15 @@ Asser_autogen/timestamp: \
 	/usr/include/qt6/QtGui/qtransform.h \
 	/usr/include/qt6/QtGui/qvalidator.h \
 	/usr/include/qt6/QtGui/qwindowdefs.h \
+	/usr/include/qt6/QtMultimedia/QAudioOutput \
+	/usr/include/qt6/QtMultimedia/QMediaPlayer \
+	/usr/include/qt6/QtMultimedia/qaudio.h \
+	/usr/include/qt6/QtMultimedia/qaudiooutput.h \
+	/usr/include/qt6/QtMultimedia/qmediaplayer.h \
+	/usr/include/qt6/QtMultimedia/qtaudio.h \
+	/usr/include/qt6/QtMultimedia/qtmultimedia-config.h \
+	/usr/include/qt6/QtMultimedia/qtmultimediaexports.h \
+	/usr/include/qt6/QtMultimedia/qtmultimediaglobal.h \
 	/usr/include/qt6/QtWidgets/QComboBox \
 	/usr/include/qt6/QtWidgets/QDialog \
 	/usr/include/qt6/QtWidgets/QFileDialog \
@@ -502,7 +511,9 @@ Asser_autogen/timestamp: \
 	/usr/include/qt6/QtWidgets/QMessageBox \
 	/usr/include/qt6/QtWidgets/QPushButton \
 	/usr/include/qt6/QtWidgets/QScrollArea \
+	/usr/include/qt6/QtWidgets/QSlider \
 	/usr/include/qt6/QtWidgets/QStackedWidget \
+	/usr/include/qt6/QtWidgets/QStyle \
 	/usr/include/qt6/QtWidgets/QTableWidget \
 	/usr/include/qt6/QtWidgets/QVBoxLayout \
 	/usr/include/qt6/QtWidgets/QWidget \
@@ -644,6 +655,25 @@ Asser_autogen/timestamp: \
 	/usr/lib64/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake \
 	/usr/lib64/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake \
 	/usr/lib64/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake \
+	/usr/lib64/cmake/Qt6Multimedia/Qt6MultimediaAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Multimedia/Qt6MultimediaConfig.cmake \
+	/usr/lib64/cmake/Qt6Multimedia/Qt6MultimediaConfigVersion.cmake \
+	/usr/lib64/cmake/Qt6Multimedia/Qt6MultimediaConfigVersionImpl.cmake \
+	/usr/lib64/cmake/Qt6Multimedia/Qt6MultimediaDependencies.cmake \
+	/usr/lib64/cmake/Qt6Multimedia/Qt6MultimediaMacros.cmake \
+	/usr/lib64/cmake/Qt6Multimedia/Qt6MultimediaPlugins.cmake \
+	/usr/lib64/cmake/Qt6Multimedia/Qt6MultimediaTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Multimedia/Qt6MultimediaTargets.cmake \
+	/usr/lib64/cmake/Qt6Multimedia/Qt6MultimediaVersionlessAliasTargets.cmake \
+	/usr/lib64/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake \
+	/usr/lib64/cmake/Qt6Network/Qt6NetworkConfig.cmake \
+	/usr/lib64/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake \
+	/usr/lib64/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake \
+	/usr/lib64/cmake/Qt6Network/Qt6NetworkDependencies.cmake \
+	/usr/lib64/cmake/Qt6Network/Qt6NetworkPlugins.cmake \
+	/usr/lib64/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake \
+	/usr/lib64/cmake/Qt6Network/Qt6NetworkTargets.cmake \
+	/usr/lib64/cmake/Qt6Network/Qt6NetworkVersionlessAliasTargets.cmake \
 	/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake \
 	/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake \
 	/usr/lib64/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake \

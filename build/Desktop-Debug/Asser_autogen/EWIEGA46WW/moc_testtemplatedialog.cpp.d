@@ -1,5 +1,6 @@
 /home/user/Qt/Asser/build/Desktop-Debug/Asser_autogen/EWIEGA46WW/moc_testtemplatedialog.cpp: /home/user/Qt/Asser/testtemplatedialog.h \
   /home/user/Qt/Asser/build/Desktop-Debug/Asser_autogen/moc_predefs.h \
+  /home/user/Qt/Asser/resultsdialog.h \
   /home/user/Qt/Asser/testtype.h \
   /usr/include/alloca.h \
   /usr/include/assert.h \
@@ -248,6 +249,7 @@
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QJsonArray \
   /usr/include/qt6/QtCore/QJsonObject \
+  /usr/include/qt6/QtCore/QString \
   /usr/include/qt6/QtCore/QTime \
   /usr/include/qt6/QtCore/QTimer \
   /usr/include/qt6/QtCore/QVector \
@@ -419,12 +421,23 @@
   /usr/include/qt6/QtGui/qtransform.h \
   /usr/include/qt6/QtGui/qvalidator.h \
   /usr/include/qt6/QtGui/qwindowdefs.h \
+  /usr/include/qt6/QtMultimedia/QAudioOutput \
+  /usr/include/qt6/QtMultimedia/QMediaPlayer \
+  /usr/include/qt6/QtMultimedia/qaudio.h \
+  /usr/include/qt6/QtMultimedia/qaudiooutput.h \
+  /usr/include/qt6/QtMultimedia/qmediaplayer.h \
+  /usr/include/qt6/QtMultimedia/qtaudio.h \
+  /usr/include/qt6/QtMultimedia/qtmultimedia-config.h \
+  /usr/include/qt6/QtMultimedia/qtmultimediaexports.h \
+  /usr/include/qt6/QtMultimedia/qtmultimediaglobal.h \
   /usr/include/qt6/QtWidgets/QDialog \
   /usr/include/qt6/QtWidgets/QGridLayout \
   /usr/include/qt6/QtWidgets/QLabel \
   /usr/include/qt6/QtWidgets/QLineEdit \
   /usr/include/qt6/QtWidgets/QPushButton \
   /usr/include/qt6/QtWidgets/QScrollArea \
+  /usr/include/qt6/QtWidgets/QSlider \
+  /usr/include/qt6/QtWidgets/QStyle \
   /usr/include/qt6/QtWidgets/QTableWidget \
   /usr/include/qt6/QtWidgets/QVBoxLayout \
   /usr/include/qt6/QtWidgets/qabstractbutton.h \

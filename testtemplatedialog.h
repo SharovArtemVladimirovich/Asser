@@ -1,6 +1,9 @@
 #ifndef TESTTEMPLATEDIALOG_H
 #define TESTTEMPLATEDIALOG_H
+
 #include "testtype.h"
+#include "resultsdialog.h"
+
 #include <QVBoxLayout>
 #include <QDialog>
 #include <QVector>
@@ -14,6 +17,11 @@
 #include <QScrollArea>
 #include <QGridLayout>
 #include <QTime>
+#include <QSlider>
+#include <QMediaPlayer>
+#include <QAudioOutput>
+#include <QStyle>
+
 struct TableAnswer {
     int row;
     int col;
@@ -37,47 +45,58 @@ struct QuestionWidget {
 
 class TestTemplateDialog : public QDialog {
     Q_OBJECT
+
 public:
-    explicit TestTemplateDialog(TestType testType, const QString& variant,
-                               const QString& userName, QWidget *parent = nullptr);
+    explicit TestTemplateDialog(TestType testType, const QString& variant, const QString& userName, QWidget *parent = nullptr);
+    ~TestTemplateDialog();
 
 signals:
     void testFinished();
 
 private slots:
-    void finishTest();
     void updateTimer();
+    void finishTest();
     void goToNextPart();
     void goToPrevPart();
-
-private:
-    void loadQuestionsFromJson(const QString& filename);
-    void setupUI();
+    void createNavigationButtons();
+    void calculateScore();
     void showCurrentPart();
     void updateNavButtons();
+    void toggleMusic();
+    void adjustVolume(int value);
+
+private:
+    void setupUI();
+    void loadQuestionsFromJson(const QString& filename);
 
     QVector<QuestionWidget> part1Questions;
     QVector<QuestionWidget> part2Questions;
     QString part1Info;
     QString part2Info;
-    int currentPart = 0;
+    int currentPart;
+    QWidget* questionsWidget;
+    QVBoxLayout* questionsLayout;
+    QScrollArea* scrollArea;
 
-    QTimer* timer;
     QLabel* timerLabel;
+    QTimer* timer;
     int timeLeft;
     QPushButton* finishButton;
     QPushButton* nextPartButton;
     QPushButton* prevPartButton;
-    QWidget* questionsWidget;
-    QVBoxLayout* questionsLayout;
-    QVector<QPushButton*> navButtons;
     QGridLayout* navButtonsLayout;
-    QScrollArea* scrollArea;
+    QVector<QPushButton*> navButtons;
 
     TestType currentTestType;
     QString currentVariant;
     QString currentUserName;
     QTime startTime;
+    QVector<ResultEntry> results;
+
+    QMediaPlayer* musicPlayer;
+    QPushButton* musicButton;
+    QSlider* volumeSlider;
+    bool isMusicPlaying;
 };
 
 #endif // TESTTEMPLATEDIALOG_H

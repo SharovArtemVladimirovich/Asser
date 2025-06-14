@@ -110,4 +110,7 @@
         <file>test1/variant1.json</file>
         <file>test2/variant1.json</file>
     </qresource>
+    <qresource prefix="/music">
+        <file>background1.mp3</file>
+    </qresource>
 </RCC>

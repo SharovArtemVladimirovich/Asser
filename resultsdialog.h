@@ -14,5 +14,6 @@ struct ResultEntry {
 class ResultsDialog : public QDialog {
     Q_OBJECT
 public:
-    ResultsDialog(const QVector<ResultEntry>& results, double totalScore, const QString& timeSpent, QWidget* parent = nullptr);
+    // Добавлен QString& userName в конструктор
+    ResultsDialog(const QVector<ResultEntry>& results, double totalScore, const QString& timeSpent, const QString& userName, QWidget* parent = nullptr);
 };

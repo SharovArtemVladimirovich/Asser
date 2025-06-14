@@ -89,7 +89,7 @@
   },
   {
     "type": "registers",
-    "question": "7. mov di, [50h]\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "7. mov di, [50h]",
     "registers": [
       {"name": "AX", "correct": ""},
       {"name": "BX", "correct": ""},
@@ -107,7 +107,7 @@
   },
   {
     "type": "registers",
-    "question": "8. mov sp, cx\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "8. mov sp, cx",
     "registers": [
       {"name": "AX", "correct": ""},
       {"name": "BX", "correct": ""},
@@ -125,7 +125,7 @@
   },
   {
     "type": "table",
-    "question": "9. mov [bp + si - 8], bl\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "9. mov [bp + si - 8], bl",
     "rows": 8,
     "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
     "answers": [
@@ -134,7 +134,7 @@
   },
   {
     "type": "registers",
-    "question": "10. mov ax, cs\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "10. mov ax, cs",
     "registers": [
       {"name": "AX", "correct": "0100"},
       {"name": "BX", "correct": ""},
@@ -152,7 +152,7 @@
   },
   {
     "type": "table",
-    "question": "11. mov word ptr [bx + 2Dh], ACEDh\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "11. mov word ptr [bx + 2Dh], ACEDh",
     "rows": 8,
     "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
     "answers": [
@@ -162,7 +162,7 @@
   },
   {
     "type": "registers",
-    "question": "12. mov dx, [si + 2]\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "12. mov dx, [si + 2]",
     "registers": [
       {"name": "AX", "correct": ""},
       {"name": "BX", "correct": ""},
@@ -180,7 +180,7 @@
   },
   {
     "type": "registers",
-    "question": "13. mov cx, dx\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "13. mov cx, dx",
     "registers": [
       {"name": "AX", "correct": ""},
       {"name": "BX", "correct": ""},
@@ -198,7 +198,7 @@
   },
   {
     "type": "table",
-    "question": "14. mov byte ptr [bp + si], 0AAh\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "14. mov byte ptr [bp + si], 0AAh",
     "rows": 8,
     "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
     "answers": [
@@ -207,7 +207,7 @@
   },
   {
     "type": "registers",
-    "question": "15. mov bx, es:[16]\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "15. mov bx, es:[16]",
     "registers": [
       {"name": "AX", "correct": ""},
       {"name": "BX", "correct": "6D3F"},
@@ -225,7 +225,7 @@
   },
   {
     "type": "registers",
-    "question": "16. mov ax, sp\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "16. mov ax, sp",
     "registers": [
       {"name": "AX", "correct": "9E12"},
       {"name": "BX", "correct": ""},
@@ -243,7 +243,7 @@
   },
   {
     "type": "table",
-    "question": "17. mov [bp + 10], al\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "17. mov [bp + 10], al",
     "rows": 8,
     "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
     "answers": [
@@ -252,7 +252,7 @@
   },
   {
     "type": "registers",
-    "question": "18. mov ax, [bx + si + 92E1h]\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "18. mov ax, [bx + si + 92E1h]",
     "registers": [
       {"name": "AX", "correct": "3D5A"},
       {"name": "BX", "correct": ""},
@@ -270,7 +270,7 @@
   },
   {
     "type": "table",
-    "question": "19. mov word ptr [3Bh], CAFEh\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "19. mov word ptr [3Bh], CAFEh",
     "rows": 8,
     "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
     "answers": [
@@ -280,7 +280,7 @@
   },
   {
     "type": "registers",
-    "question": "20. mov di, [bx + di + 0C800h]\nAX = _____\tBX = _____\tCX = _____\tDX = _____\tSI = _____\tDI = _____\tBP = _____\tSP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____",
+    "question": "20. mov di, [bx + di + 0C800h]",
     "registers": [
       {"name": "AX", "correct": ""},
       {"name": "BX", "correct": ""},
@@ -322,7 +322,7 @@
   },
   {
     "type": "table",
-    "question": "2. mov [edi + 10h], ecx\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "2. mov [edi + 10h], ecx",
     "rows": 8,
     "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
     "answers": [
@@ -354,7 +354,7 @@
   },
   {
     "type": "table",
-    "question": "4. mov [esi + edx*2 + 5], edx\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "4. mov [esi + edx*2 + 5], edx",
     "rows": 8,
     "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
     "answers": [
@@ -386,7 +386,7 @@
   },
   {
     "type": "table",
-    "question": "6. mov dword ptr es:[ebx], 9D3FE8C1h\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "6. mov dword ptr es:[ebx], 9D3FE8C1h",
     "rows": 8,
     "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
     "answers": [
@@ -418,7 +418,7 @@
   },
   {
     "type": "table",
-    "question": "8. mov [edi], eax\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "8. mov [edi], eax",
     "rows": 8,
     "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
     "answers": [
@@ -550,7 +550,7 @@
   },
   {
     "type": "table",
-    "question": "15. mov [esi - 10], esp\nEAX = _____\tEBX = _____\tECX = _____\tEDX = _____\tESI = _____\tEDI = _____\tEBP = _____\tESP = _____\tCS = _____\tDS = _____\tSS = _____\tES = _____\tFS = _____\tGS = _____",
+    "question": "15. mov [esi - 10], esp",
     "rows": 8,
     "columns": ["00h", "01h", "02h", "03h", "04h", "05h", "06h", "07h", "08h", "09h", "0Ah", "0Bh", "0Ch", "0Dh", "0Eh", "0Fh"],
     "answers": [
