@@ -1,7 +1,9 @@
 #include "mainwindow.h"
 #include "screenspace.h"
 #include "style.h"
-#include "testtemplatedialog.h"
+#include "basetestdialog.h"
+#include "test1.h"
+#include "test2.h"
 
 #include <QDebug>
 
@@ -179,17 +181,25 @@ void MainWindow::hideNotification() {
 
 
 void MainWindow::handleTestRequest(TestType type, const QString& name, const QString& variant) {
-    TestTemplateDialog *testDialog = new TestTemplateDialog(type, variant, name, this);
-    testDialog->setAttribute(Qt::WA_DeleteOnClose); // Автоматическое удаление
+    QDialog *testDialog = nullptr;
 
-    // Подключение сигнала к слоту
-    connect(testDialog, &TestTemplateDialog::testFinished, this, [this]() {
-        stck->setCurrentIndex(Screen::MAIN); // Возврат на главный экран
-        qDebug() << "Текущий индекс:" << stck->currentIndex(); // Отладка
-    });
+    switch (type) {
+        case TestType::SystemSch:
+            testDialog = new Test1(variant, name, this);
+            break;
+        case TestType::Mov:
+            testDialog = new Test2(variant, name, this);
+            break;
+        default:
+            // Для остальных тестов пока ничего не делаем
+            return;
+    }
 
-    testDialog->setWindowState(Qt::WindowFullScreen);
-    testDialog->exec();
+    if (testDialog) {
+        testDialog->setAttribute(Qt::WA_DeleteOnClose);
+        testDialog->setWindowState(Qt::WindowFullScreen);
+        testDialog->exec();
+    }
 }
 
 

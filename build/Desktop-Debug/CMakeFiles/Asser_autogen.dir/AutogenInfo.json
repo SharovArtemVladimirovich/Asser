@@ -299,6 +299,12 @@
 			"EWIEGA46WW/moc_authors.cpp",
 			null
 		],
+		[
+			"/home/user/Qt/Asser/basetestdialog.h",
+			"MU",
+			"EWIEGA46WW/moc_basetestdialog.cpp",
+			null
+		],
 		[ "/home/user/Qt/Asser/donut.h", "MU", "EWIEGA46WW/moc_donut.cpp", null ],
 		[
 			"/home/user/Qt/Asser/mainscreen.h",
@@ -337,13 +343,9 @@
 			null
 		],
 		[ "/home/user/Qt/Asser/style.h", "MU", "EWIEGA46WW/moc_style.cpp", null ],
+		[ "/home/user/Qt/Asser/test1.h", "MU", "EWIEGA46WW/moc_test1.cpp", null ],
+		[ "/home/user/Qt/Asser/test2.h", "MU", "EWIEGA46WW/moc_test2.cpp", null ],
 		[ "/home/user/Qt/Asser/tests.h", "MU", "EWIEGA46WW/moc_tests.cpp", null ],
-		[
-			"/home/user/Qt/Asser/testtemplatedialog.h",
-			"MU",
-			"EWIEGA46WW/moc_testtemplatedialog.cpp",
-			null
-		],
 		[
 			"/home/user/Qt/Asser/testtype.h",
 			"MU",
@@ -419,6 +421,7 @@
 	"SOURCES" : 
 	[
 		[ "/home/user/Qt/Asser/authors.cpp", "MU", null ],
+		[ "/home/user/Qt/Asser/basetestdialog.cpp", "MU", null ],
 		[ "/home/user/Qt/Asser/donut.cpp", "MU", null ],
 		[ "/home/user/Qt/Asser/main.cpp", "MU", null ],
 		[ "/home/user/Qt/Asser/mainscreen.cpp", "MU", null ],
@@ -426,8 +429,9 @@
 		[ "/home/user/Qt/Asser/manuals.cpp", "MU", null ],
 		[ "/home/user/Qt/Asser/resultsdialog.cpp", "MU", null ],
 		[ "/home/user/Qt/Asser/starttestdialog.cpp", "MU", null ],
-		[ "/home/user/Qt/Asser/tests.cpp", "MU", null ],
-		[ "/home/user/Qt/Asser/testtemplatedialog.cpp", "MU", null ]
+		[ "/home/user/Qt/Asser/test1.cpp", "MU", null ],
+		[ "/home/user/Qt/Asser/test2.cpp", "MU", null ],
+		[ "/home/user/Qt/Asser/tests.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

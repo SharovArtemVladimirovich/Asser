@@ -31,8 +31,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         manuals.h manuals.cpp manuals.ui
         starttestdialog.h starttestdialog.cpp
         testtype.h
-        testtemplatedialog.h testtemplatedialog.cpp
+
         resultsdialog.h resultsdialog.cpp
+        test1.h test1.cpp
+        test2.h test2.cpp
+        basetestdialog.h basetestdialog.cpp
 
     )
 # Define target properties for Android with Qt 6 as:

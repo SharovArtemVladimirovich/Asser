@@ -112,5 +112,6 @@
     </qresource>
     <qresource prefix="/music">
         <file>background1.mp3</file>
+        <file>Мрачный_день.mp3</file>
     </qresource>
 </RCC>
